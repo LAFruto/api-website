@@ -91,7 +91,7 @@ const FAQ = () => {
   }, []);
 
     return (
-        <section className="max-container padding-container max-container padding-container py-12 flex-col flex items-center">
+        <section className="max-container padding-container max-container padding-container py-12 lg:py-24 flex-col flex items-center">
           <h1 className="bold-40 text-center pb-12 lg:bold-64">Frequently Asked<br/> Questions</h1>
 
           <div className=" w-[80%] rounded-xl flex-none !max-w-[56rem]">

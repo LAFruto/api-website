@@ -133,8 +133,8 @@ const Recents = () => {
   }, []);
 
   return (
-    <section className="bg-orange-50 rounded-lg py-12 lg:py-16">
-      <div className="max-container padding-container lg:pb-16 py-6">
+    <section className="bg-orange-50 rounded-lg py-12 lg:py-24">
+      <div className="max-container padding-container py-12 lg:pb-16">
         <div className="px-0 xl:px-20 flex flex-col lg:grid grid-cols-2 gap-4">
           <h1 className="bold-52 lg:bold-64 col-span-1">Our recent milestones</h1>
           <div className="flex flex-col justify-between items-start gap-8">

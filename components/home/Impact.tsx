@@ -95,14 +95,14 @@ const Impact = () => {
   }, []);
 
   return (
-    <section className="padding-container bg-blue-50 rounded-lg py-16 flexCenter flex-col">
+    <section className="padding-container bg-blue-50 rounded-lg py-12 lg:py-16 flexCenter flex-col">
       <div className="max-container w-full flexCenter flex-col grid-cols-3 gap-12 lg:grid lg:gap-2">
         {/* Render stats */}
         {STATS.map((stat, index) => (
           <StatItem key={index} title={stat.title} number={stat.number} />
         ))}
       </div>
-      <hr className="lg:w-[70%] my-20" />
+      <hr className="w-full lg:w-[70%] my-20" />
       {/* Swiper container for testimonials */}
       <div className="w-full">
         <swiper-container init="false" pagination="true" ref={swiperRef}  style={{"--swiper-pagination-color": "#fff"} as React.CSSProperties}>

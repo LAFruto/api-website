@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
     { href: '/', key: 'home', label: 'HOME' },
-    { href: '/', key: 'about', label: 'ABOUT' },
-    { href: '/', key: 'involvements', label: 'INVOLVEMENTS' }
+    { href: '/about', key: 'about', label: 'ABOUT' },
+    { href: '/involvements', key: 'involvements', label: 'INVOLVEMENTS' },
 ];
 
 
@@ -106,26 +106,45 @@ export const FAQs = [
 
 export const TIMELINES = [
     {
-        image: "/immortals.jpg",
-        month: "July",
-        description: "The Association of Proactive Innovators is founded",   
+        year: 2023,
+        activity: [
+            {
+                image: "/images/timeline_july2023.png",
+                month: "July",
+                description: "The Association of Proactive Innovators is founded",   
+            },
+            {
+                image: "/images/timeline_august2023.jpg",
+                month: "August",
+                description: "API officially partners with DICE",   
+            },
+            {
+                image: "/images/timeline_september2023.jpg",
+                month: "September",
+                description: "API holds its first workshop (Java Zero to Hero)",   
+            },
+            {
+                image: "/images/timeline_november2023.jpg",
+                month: "November",
+                description: "API holds its first team-building activity",   
+            },
+        ]
     },
     {
-        image: "/immortals.jpg",
-        month: "July",
-        description: "The Association of Proactive Innovators is founded",   
+        year: 2024,
+        activity: [
+            {
+                image: "/images/timeline_february2024.png",
+                month: "February",
+                description: "API holds its second workshop (Python: Breaking Into Greatness)"
+            }
+        ]
     },
     {
-        image: "/immortals.jpg",
-        month: "July",
-        description: "The Association of Proactive Innovators is founded",   
-    },
-    {
-        image: "/immortals.jpg",
-        month: "July",
-        description: "The Association of Proactive Innovators is founded",   
-    },
-]
+        year: 2025,
+        activity: []
+    }
+];
 
 export const OFFICERS = [
     {
