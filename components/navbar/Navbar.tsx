@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="z-10 !fixed top-0 left-0 right-0 bottom-auto w-full min-h-28 items-center pl-[5%] pr-[5%] flex bg-black">
+    <div className="z-20 !fixed top-0 left-0 right-0 bottom-auto w-full min-h-28 items-center pl-[5%] pr-[5%] flex bg-black">
       <div className="max-w-[80rem] w-full h-full px-8 py-3.5 gap-8 flexBetween items-center bg-white m-auto relative shadow-xl rounded-2xl">
         {/* DESKOTOP NAVBAR */}
         <a>
