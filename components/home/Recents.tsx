@@ -36,12 +36,12 @@ const RecentItem = ({ image, title, tags, url }: RecentProps) => {
   return (
     <Link href={url}>
       <div className="relative h-[600px] w-full bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="relative object-cover ease-in-out duration-300 group-hover:scale-[1.1]  group-hover:brightness-90 group-hover:saturate-100 group-hover:sepia-30 group-hover:opacity-70 !overflow-hidden cursor-pointer"
-          />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="relative object-cover ease-in-out duration-300 group-hover:scale-[1.1]  group-hover:brightness-90 group-hover:saturate-100 group-hover:sepia-30 group-hover:opacity-70 !overflow-hidden cursor-pointer"
+        />
         <div className="w-[80%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl gap-4 ease-in-out duration-300 hover:bg-orange-90">
           <div className="flex gap-2 ">
             {tags.map((tag, index) => (
@@ -133,23 +133,23 @@ const Recents = () => {
     <section className="bg-orange-50 rounded-lg py-12 lg:py-24">
       <div className="max-container padding-container py-12 lg:pb-16">
         <div className="px-0 xl:px-20 flex flex-col lg:grid grid-cols-2 gap-4">
-          <h1 className="bold-52 lg:bold-64 col-span-1">Our recent milestones</h1>
+          <h1 className="bold-52 lg:bold-64 col-span-1">
+            Our recent milestones
+          </h1>
           <div className="flex flex-col justify-between items-start gap-8">
             <p>
               Explore our latest triumphs and accolades as we push innovation
               boundaries. From winning competitions to pioneering workshops.
             </p>
             <Link href={"/involvements"}>
-            <Button
-              type={"button"}
-              title={"explore our involvements"}
-              variant={"btn_blue"}
-            />
+              <Button
+                type={"button"}
+                title={"explore our involvements"}
+                variant={"btn_blue"}
+              />
             </Link>
-
           </div>
         </div>
-
       </div>
       <div className="flex flex-col gap-2 w-full pr-[8%] px-[5%] ">
         <swiper-container init="false" ref={swiperRef}>

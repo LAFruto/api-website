@@ -54,7 +54,13 @@ const TestimonialItem = ({
 }: TestimonialProps) => {
   return (
     <div className="w-20% text-white flexCenter flex-col gap-4">
-      <Image className="rounded-full" src={image} alt={name} width={150} height={150} />
+      <Image
+        className="rounded-full"
+        src={image}
+        alt={name}
+        width={150}
+        height={150}
+      />
       <h6 className="bold-16 uppercase">
         {name} / {position}
       </h6>
@@ -105,7 +111,12 @@ const Impact = () => {
       <hr className="w-full lg:w-[70%] my-20" />
       {/* Swiper container for testimonials */}
       <div className="w-full">
-        <swiper-container init="false" pagination="true" ref={swiperRef}  style={{"--swiper-pagination-color": "#fff"} as React.CSSProperties}>
+        <swiper-container
+          init="false"
+          pagination="true"
+          ref={swiperRef}
+          style={{ "--swiper-pagination-color": "#fff" } as React.CSSProperties}
+        >
           {/* Render testimonials */}
           {TESTIMONIALS.map((testimonial, index) => (
             <swiper-slide key={index}>

@@ -1,12 +1,13 @@
-import Register from "@/components/Register";
+import Form from "@/components/contact/Form";
+import Location from "@/components/contact/Location";
 
 const Contact = () => {
-    return ( 
+  return (
     <>
-      <Register />
-    </> 
-    
-    );
-}
- 
+      <Form />
+      <Location />
+    </>
+  );
+};
+
 export default Contact;

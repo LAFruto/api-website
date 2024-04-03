@@ -12,10 +12,7 @@ interface PersonProps {
 
 const PersonItem = ({ image, name, position, link }: PersonProps) => {
   return (
-    <Link
-      href={link}
-      className="w-full"
-    >
+    <Link href={link} className="w-full">
       <div className="relative h-[500px] bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
         <Image
           src={image}
