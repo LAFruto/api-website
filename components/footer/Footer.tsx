@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12">
-          <h2 className="bold-52 mt-5 capitalize">
+          <h2 className="bold-40 lg:bold-64 mt-5 capitalize">
             Be Proactive, Lead Boldy.
           </h2>
         </div>

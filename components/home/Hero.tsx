@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../Button";
 import Image from "next/image";
 
@@ -10,21 +11,19 @@ const Hero = () => {
             Empowering tomorrow's visionaries
           </h1>
           <p className="regular-16 mt-4 xl:max-w[50px]">
-            We are a tech-focused club in <b>Mapua Malayan Colleges Mindanao</b>
+            We are a tech-focused club in <b>Mapúa Malayan Colleges Mindanao</b>
             , dedicated to nurturing student growth through workshops,
             competitions, and opportunities for hands-on learning and skill
             development.
           </p>
           <div className="mt-2">
-            <Button
-              type="button"
-              title="get started"
-              variant="btn_orange"
-            />
+            <Link href={"/contact"}>
+              <Button type="button" title="get started" variant="btn_orange" />
+            </Link>
           </div>
         </div>
         <div className="block">
-          <Image src="/images/hero.png" alt="hero" width={500} height={500}/>
+          <Image src="/images/hero.png" alt="hero" width={500} height={500} />
         </div>
       </div>
     </section>
@@ -32,10 +31,3 @@ const Hero = () => {
 };
 
 export default Hero;
-{
-  /* <div className="relative flex flex-1 items-start">
-            <div className="relative z-20 flex w-[268px] flex-col gap-8 rounded-3xl bg-green-90 px-7 py-8">
-
-            </div>
-        </div> */
-}

@@ -4,7 +4,25 @@ export const NAV_LINKS = [
     { href: '/involvements', key: 'involvements', label: 'INVOLVEMENTS' },
 ];
 
+export const SOCIALS = [
+    {
+        link: "https://www.facebook.com/api.mapuamcm",
+        svglink: "www.facebook.com",
+        color: "#3b5998",
+    },
+    {
+        link: "https://www.instagram.com/api_mapuamcm/",
+        svglink: "www.instagram.com",
+        color: "#c32aa3"
+    },
+    {
+        link: "https://www.linkedin.com/company/96648842/",
+        svglink: "www.linkedin.com",
+        color: "#0077b5",
+    },
+];
 
+// Home Page
 export const PARTNERS = [
     {
         logo: "/images/partner_gdsc.png",
@@ -104,6 +122,7 @@ export const FAQs = [
     }
 ]
 
+// About Page
 export const TIMELINES = [
     {
         year: 2023,
@@ -121,7 +140,7 @@ export const TIMELINES = [
             {
                 image: "/images/timeline_september2023.jpg",
                 month: "September",
-                description: "API holds its first workshop (Java Zero to Hero)",   
+                description: "API holds its first ever workshop (Java Zero to Hero)",   
             },
             {
                 image: "/images/timeline_november2023.jpg",
@@ -209,121 +228,96 @@ export const OFFICERS = [
     },
     {
         image: "/images/officers/deduyo.jpg",
+        name: "Azriel Peter Deduyo",
+        position: "Communications Head",
+        link: "https://github.com/",
+    },
+    {
+        image: "/images/officers/dela_serna.jpg",
         name: "Faye Dela Serna",
         position: "Creatives Media Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/operario.jpg",
         name: "Kim Operario",
         position: "Creatives Media Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/jardin.jpg",
         name: "Sebastian Jardin",
         position: "Creatives Media Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/magdamo.jpg",
         name: "Lewis Carl Magdamo",
         position: "Creatives Media Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/acquiat.jpg",
         name: "Gyrro Acquiat",
         position: "Logistics Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/dayuno.jpg",
         name: "Jhon Lloyd Dayuno",
         position: "Technical Operations Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/sanchez.jpg",
         name: "Hillary Mae Sanchez",
         position: "Communications Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/toyoda.jpg",
         name: "Jaen Rafael Toyoda",
         position: "Research & Development Member",
         link: "https://github.com/",
     },
     {
-        image: "/images/officers/deduyo.jpg",
+        image: "/images/officers/sian.jpg",
         name: "David Anthony Sian",
         position: "Research & Development Member",
         link: "https://github.com/",
     },
 ]
 
-export const ADVISORS = [
+// Involvements
+export const ACTIVITIES = [
     {
-        image: "/images/officers/cordero",
-        name: "Sir Martzel Baste",
-        position: "Professor",
-    }
-]
-
-
-
-export const UPCOMINGS = [
-    {
-        image: '/immortals.jpg',
-        title: 'Breaking Into Greatness: Programming with Python',
-        date: 'Event - February 2024',
-        description: 'Breaking Into Greatness: Programming with Python is an immersive workshop offering a transformative experience in mastering Python programming. Participants will unravel the intricacies of Python from decoding data to crafting algorithms, breaking barriers to enter the realm of coding greatness.',
-        url: '',
-    },
-]
-
-export const EXPLORE = [
-    {
-        image: '/immortals.jpg',
-        title: 'BPI’s Philippine Junior Data Science Competition',
-        date: 'November 2023 ',
-        description: 'The Immortals (Luis Angelo Fruto, Jhon Lloyd Dayuno, and Jaen Rafael Toyoda) attended the BPI Data Wave Summit in November 2023, winning the 1st-runner up title in annual PJDSC.',
+        image: "/images/involvement_bigpp.jpg",
+        title: "Breaking into Greatness Programming with Python",        
+        tags: ["February 2024", "Workshop"],
+        url: "test",
     },
     {
-        image: '/immortals.jpg',
-        title: 'BPI’s Philippine Junior Data Science Competition ',
-        date: 'October 2023',
-        description: 'The Immortals (Luis Angelo Fruto, Jhon Lloyd Dayuno, and Jaen Rafael Toyoda) attended the BPI Data Wave Summit in November 2023, winning the 1st-runner up title in annual PJDSC. ',
+        image: "/images/involvement_teambuilding.png",
+        title: "API's First Team-Building",        
+        tags: ["November 2023"],
+        url: "test",
     },
     {
-        image: '/immortals.jpg',
-        title: 'From Zero to Hero: Introduction to Java. API Holds its First Seminar-Workshop',
-        date: 'September 2023',
-        description: 'From Zero to Hero is a seminar-workshop whose objective was to introduce beginners to the basic concepts of the programming language, and deeper, advanced topics for more seasoned students. API Officers Jaen Toyoda (Research and Development) and Jonas Rusiana (Internal VP) we’re the speakers for the event.',
+        image: "/images/involvement_pjdsc.png",
+        title: "BPI's Philippine Junior Data Science Competition",        
+        tags: ["November 2023", "Competition"],
+        url: "test",
     },
     {
-        image: '/immortals.jpg',
-        title: 'Weekend Getaway: API Embarks on its First Team-Building Activity ',
-        date: 'November 2023',
-        description: 'The Officers of API, along with a few members, gathered at Kawaii Beach Resort located at Samal Island to strengthen team bonds and unwind. ',
-    },
-]
-
-export const SOCIALS = [
-    {
-        link: "https://www.facebook.com/api.mapuamcm",
-        svglink: "www.facebook.com",
-        color: "#3b5998",
+        image: "/images/involvement_zerotohero.png",
+        title: "From Zero to Hero: Introduction to Java",        
+        tags: ["September 2023"],
+        url: "test",
     },
     {
-        link: "https://www.instagram.com/api_mapuamcm/",
-        svglink: "www.instagram.com",
-        color: "#c32aa3"
-    },
-    {
-        link: "https://www.linkedin.com/company/96648842/",
-        svglink: "www.linkedin.com",
-        color: "#0077b5",
+        image: "/images/involvement_ctf.png",
+        title: "Trend University Capture the Flag",        
+        tags: ["October 2023"],
+        url: "test",
     },
 ];

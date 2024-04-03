@@ -29,7 +29,12 @@ interface FAQProps {
   image: string;
 }
 
-const FAQItem = ({ index, question, answer, image }: FAQProps & { index: number }) => {
+const FAQItem = ({
+  index,
+  question,
+  answer,
+  image,
+}: FAQProps & { index: number }) => {
   return (
     <div className="h-[32rem] md:h-[24rem] rounded-xl flex flex-col bg-orange-50 hover:bg-orange-90 duration-300 ease-in-out md:flex-row ">
       <div className="relative bg-blue-50 w-full h-[80px] sm:h-full md:w-[50%] rounded-xl overflow-hidden flex-grow-1 flex-shrink-0 sm:flex-grow sm:flex-shrink">
@@ -51,12 +56,12 @@ const FAQItem = ({ index, question, answer, image }: FAQProps & { index: number 
           </div>
         </div>
         <div className="w-full gap-x-16 justify-center items-start flex flex-col-reverse lg:flex-row">
-            <p className="regular-16">{answer}</p>
+          <p className="regular-16">{answer}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const FAQ = () => {
   const swiperRef = useRef<any>(null);
@@ -90,29 +95,29 @@ const FAQ = () => {
     }
   }, []);
 
-    return (
-        <section className="max-container padding-container max-container padding-container py-12 lg:py-24 flex-col flex items-center">
-          <h1 className="bold-40 text-center pb-12 lg:bold-64">Frequently Asked<br/> Questions</h1>
-
-          <div className=" w-[80%] rounded-xl flex-none !max-w-[56rem]">
-            <swiper-container init="false" ref={swiperRef}>
-              {FAQs.map((FAQ, index) => (
-                <swiper-slide>
-                  <FAQItem
-                    key={index}
-                    index={index}
-                    question={FAQ.question}
-                    answer={FAQ.answer}
-                    image={FAQ.image}
-                  />
-                </swiper-slide>
-              ))}
-            </swiper-container>
-
-          </div>
-        
-        </section>
-    )
-}
+  return (
+    <section className="max-container padding-container max-container padding-container py-12 lg:py-24 flex-col flex items-center">
+      <h1 className="bold-40 text-center pb-12 lg:bold-64">
+        Frequently Asked
+        <br /> Questions
+      </h1>
+      <div className=" w-[80%] rounded-xl flex-none !max-w-[56rem]">
+        <swiper-container init="false" ref={swiperRef}>
+          {FAQs.map((FAQ, index) => (
+            <swiper-slide>
+              <FAQItem
+                key={index}
+                index={index}
+                question={FAQ.question}
+                answer={FAQ.answer}
+                image={FAQ.image}
+              />
+            </swiper-slide>
+          ))}
+        </swiper-container>
+      </div>
+    </section>
+  );
+};
 
 export default FAQ;

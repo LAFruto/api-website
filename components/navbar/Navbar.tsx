@@ -44,7 +44,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <Link href="/" className="btn_orange hidden lg:flex">
+        <Link href="/contact" className="btn_orange hidden lg:flex">
           contact us
         </Link>
 
@@ -99,7 +99,7 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <Link href="/" className="btn_orange text-center">
+            <Link href="/contact" className="btn_orange text-center">
               contact us
             </Link>
           </ul>
