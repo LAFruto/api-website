@@ -12,7 +12,7 @@ interface ActivityProps {
 const ActivityItem = ({ image, title, tags, url }: ActivityProps) => {
   return (
     <Link href={url}>
-      <div className="relative h-[600px] w-full bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
+      <div className="relative h-[400px] lg:h-[600px] w-full bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
         <Image
           src={image}
           alt={title}
@@ -72,7 +72,7 @@ const ActivityItem = ({ image, title, tags, url }: ActivityProps) => {
 
 const Activities = () => {
   return (
-    <section className="max-container padding-container py-24 grid grid-cols-2 gap-8">
+    <section className="max-container padding-container py-24 flex flex-col lg:grid grid-cols-2 gap-8">
       {ACTIVITIES.map((activity, index) => (
         <ActivityItem
           // key={index}
