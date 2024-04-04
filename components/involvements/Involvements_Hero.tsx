@@ -7,7 +7,7 @@ const Involvements_Hero = () => {
       <div className="max-container padding-container flex flex-col-reverse gap-4 grid-cols-2 lg:grid">
         <div>
           <div className="flex flex-col py-6 px-0 lg:px-6 gap-8">
-            <h1 className="text-white bold-40 lg:bold-64 !leading-[1.1]">
+            <h1 className="text-white bold-46 lg:bold-64 !leading-[1.1]">
               Innovative Successes
             </h1>
             <p className="text-white">
