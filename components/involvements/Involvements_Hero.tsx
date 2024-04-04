@@ -3,7 +3,7 @@ import Button from "../Button";
 
 const Involvements_Hero = () => {
   return (
-    <section className="bg-blue-50 pt-32 rounded-bl-xl rounded-br-xl">
+    <section className="relative z-20 bg-blue-50 pt-32 rounded-bl-xl rounded-br-xl">
       <div className="max-container padding-container flex flex-col-reverse gap-4 grid-cols-2 lg:grid">
         <div>
           <div className="flex flex-col py-6 px-0 lg:px-6 gap-8">

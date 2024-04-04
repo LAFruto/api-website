@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 rounded-tl-lg rounded-tr-lg mt-[-15px]  py-12 lg:py-16 bg-orange-50">
+    <footer className="relative z-40 rounded-tl-lg rounded-tr-lg mt-[-15px]  py-12 lg:py-16 bg-orange-50">
       <div className="padding-container max-container w-full flex flex-col justify-between">
         <div className="flex flex-col gap-4 col-span-12 lg:col-span-8 xl:col-span-6">
           <div className="flex flex-col gap-5">
