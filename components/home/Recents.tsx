@@ -131,7 +131,7 @@ const Recents = () => {
 
   return (
     <section className="bg-orange-50 rounded-lg py-12 lg:py-16">
-      <div className="max-container padding-container py-12 lg:pb-16">
+      <div className="max-container padding-container mb-4 py-4 lg:py-12 lg:pb-16">
         <div className="px-0 xl:px-20 flex flex-col lg:grid grid-cols-2 gap-4">
           <h1 className="bold-52 lg:bold-64 col-span-1">
             Our recent milestones
