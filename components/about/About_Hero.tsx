@@ -7,7 +7,7 @@ const About_Hero = () => {
       <div className="max-container padding-container flex flex-col-reverse gap-4 grid-cols-2 lg:grid">
         <div>
           <div className="flex flex-col py-6 px-0 lg:px-6 gap-8 mb-6">
-            <h1 className="text-white bold-64">This is API!</h1>
+            <h1 className="text-white bold-46 lg:bold-64">This is API!</h1>
             <p className="text-white">
               API, founded in August 2023 at Mapua Malayan Colleges of Mindanao,
               is a tech club offering workshops and competitions to college

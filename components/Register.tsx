@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "./Button";
 import Link from "next/link";
 
 const Register = () => {
@@ -7,7 +6,7 @@ const Register = () => {
     <section className="bg-blue-50 text-white rounded-lg ">
       <div className="padding-container max-container flex justify-between items-center">
         <div className="py-12">
-          <h1 className="bold-40 lg:bold-64 leading-[1.1] mb-6 lg:mb-12 ">
+          <h1 className="bold-46 lg:bold-64 leading-[1.1] mb-6 lg:mb-12 ">
             Join our <br /> association!
           </h1>
           <Link
