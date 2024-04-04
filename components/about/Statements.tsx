@@ -5,7 +5,7 @@ const Statements = () => {
   return (
     <div>
       <Banner 
-        image={"/images/statement_1.png"}
+        image={"/images/statement_1.JPG"}
         title={"mission banner"}
       />
       <div className="relative z-10 bg-orange-50 rounded-xl py-16 my-[-.5rem]">

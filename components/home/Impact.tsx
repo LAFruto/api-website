@@ -108,9 +108,9 @@ const Impact = () => {
           <StatItem key={index} title={stat.title} number={stat.number} />
         ))}
       </div>
-      <hr className="w-full lg:w-[70%] my-20" />
+      <hr className="max-container w-full lg:w-[70%] my-20" />
       {/* Swiper container for testimonials */}
-      <div className="w-full">
+      <div className="w-full max-container">
         <swiper-container
           init="false"
           pagination="true"
@@ -135,15 +135,3 @@ const Impact = () => {
 };
 
 export default Impact;
-
-// // {TESTIMONIALS.map((testimonial, index) => (
-//   <swiper-slide>
-//     <TestimonialItem
-//     key={index}
-//       image={testimonial.image}
-//       name={testimonial.name}
-//       position={testimonial.position}
-//       quote={testimonial.quote}
-//     />
-//   </swiper-slide>
-// ))}
