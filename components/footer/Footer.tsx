@@ -1,7 +1,5 @@
-import { SOCIALS } from "@/constants";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { SOCIALS } from "@/constants";
 import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
@@ -26,7 +24,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12">
-          <h2 className="bold-40 lg:bold-64 mt-5 capitalize">
+          <h2 className="bold-46 lg:bold-64 mt-5 capitalize">
             Be Proactive, Lead Boldy.
           </h2>
         </div>
