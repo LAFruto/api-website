@@ -1,6 +1,6 @@
-import Banner from "@/components/Banner";
 import Form from "@/components/contact/Form";
 import Location from "@/components/contact/Location";
+import Banner from "@/components/Banner";
 
 const Contact = () => {
   return (

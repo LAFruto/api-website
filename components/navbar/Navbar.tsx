@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { NAV_LINKS } from "@/constants";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { NAV_LINKS } from "@/constants";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);

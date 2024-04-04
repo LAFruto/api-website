@@ -1,6 +1,5 @@
 import Image from "next/image";
 import MapEmbed from "./MapEmbed";
-import Banner from "../Banner";
 
 const Location = () => {
   return (

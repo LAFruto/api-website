@@ -1,7 +1,9 @@
-import { ACTIVITIES } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+
 import AnimatedArrow from "../AnimatedArrow";
+
+import { ACTIVITIES } from "@/constants";
 
 interface ActivityProps {
   image: string;

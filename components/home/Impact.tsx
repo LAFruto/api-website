@@ -1,7 +1,9 @@
-import { STATS, TESTIMONIALS } from "@/constants";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
+
+import Image from "next/image";
 import { register } from "swiper/element/bundle";
+
+import { STATS, TESTIMONIALS } from "@/constants";
 
 register();
 
@@ -13,7 +15,7 @@ declare global {
           pagination?: string;
           navigation?: string;
           style?: React.CSSProperties;
-          init?: string; // Add the init attribute here
+          init?: string;
         },
         HTMLElement
       >;
@@ -74,28 +76,19 @@ const Impact = () => {
   const swiperRef = useRef<any>(null);
 
   useEffect(() => {
-    // Register Swiper web component
     register();
 
-    // Object with parameters
     const params = {
       loop: true,
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false,
-      // },
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
       },
     };
 
-    // Assign it to swiper element
     if (swiperRef.current) {
-      // Check if swiperRef.current is not null
       Object.assign(swiperRef.current, params);
 
-      // initialize swiper
       swiperRef.current.initialize();
     }
   }, []);
@@ -103,13 +96,11 @@ const Impact = () => {
   return (
     <section className="padding-container bg-blue-50 rounded-lg py-12 lg:py-16 flexCenter flex-col">
       <div className="max-container w-full flexCenter flex-col grid-cols-3 gap-12 lg:grid lg:gap-2">
-        {/* Render stats */}
         {STATS.map((stat, index) => (
           <StatItem key={index} title={stat.title} number={stat.number} />
         ))}
       </div>
       <hr className="max-container w-full lg:w-[70%] my-20" />
-      {/* Swiper container for testimonials */}
       <div className="w-full max-container">
         <swiper-container
           init="false"
@@ -117,7 +108,6 @@ const Impact = () => {
           ref={swiperRef}
           style={{ "--swiper-pagination-color": "#fff" } as React.CSSProperties}
         >
-          {/* Render testimonials */}
           {TESTIMONIALS.map((testimonial, index) => (
             <swiper-slide key={index}>
               <TestimonialItem

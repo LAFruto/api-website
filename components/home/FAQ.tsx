@@ -67,10 +67,8 @@ const FAQ = () => {
   const swiperRef = useRef<any>(null);
 
   useEffect(() => {
-    // Register Swiper web component
     register();
 
-    // Object with parameters
     const params = {
       effect: "cards",
       grabCursor: true,
@@ -85,19 +83,16 @@ const FAQ = () => {
       ],
     };
 
-    // Assign it to swiper element
     if (swiperRef.current) {
-      // Check if swiperRef.current is not null
       Object.assign(swiperRef.current, params);
 
-      // initialize swiper
       swiperRef.current.initialize();
     }
   }, []);
 
   return (
     <section className="max-container padding-container max-container padding-container py-12 lg:py-24 flex-col flex items-center">
-      <h1 className="bold-40 text-center pb-12 lg:bold-64">
+      <h1 className="bold-46 text-center pb-12 lg:bold-64">
         Frequently Asked
         <br /> Questions
       </h1>

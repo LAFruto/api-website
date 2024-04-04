@@ -1,6 +1,7 @@
-import { TIMELINES } from "@/constants";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+
+import { TIMELINES } from "@/constants";
 
 interface ActivityProps {
   image: string;

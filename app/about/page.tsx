@@ -1,7 +1,7 @@
-import Officers from "@/components/about/Officers";
 import About_Hero from "../../components/about/About_Hero";
-import Statements from "@/components/about/Statements";
+import Officers from "@/components/about/Officers";
 import Timeline from "@/components/about/Timeline";
+import Statements from "@/components/about/Statements";
 import Register from "@/components/Register";
 
 const About = () => {
