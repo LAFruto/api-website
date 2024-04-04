@@ -2,10 +2,10 @@ import Button from "../Button";
 
 const Form = () => {
   return (
-    <section className="max-container padding-container my-40">
+    <section className="max-container padding-container my-32 lg:my-40">
       <div className="flex flex-col justify-between grid-cols-2 gap-8 lg:grid">
         <div className="flex flex-col justify-center">
-          <h1 className="bold-40 lg:bold-64">Get In Touch.</h1>
+          <h1 className="bold-46 lg:bold-64">Get In Touch.</h1>
           <p className="mt-6">
             Reach out to us to find out more about our club or current
             workshop/competitions. We’re here for you.
@@ -13,8 +13,8 @@ const Form = () => {
         </div>
 
         <form className="flex flex-col gap-8 items-stretch">
-          <div className="flex gap-x-6 justify-between">
-            <div className="flex-1">
+          <div className="flex flex-col gap-6 justify-between lg:flex-row">
+            <div className="flex-1 ">
               <label className="" htmlFor="sendername">
                 Full Name
               </label>
@@ -39,6 +39,7 @@ const Form = () => {
                 required
               />
             </div>
+
           </div>
           <div className="flex-1">
             <p>What are you interested in?</p>
@@ -99,8 +100,8 @@ const Form = () => {
           </div>
           <Button 
             type={"button"}
-            variant={"btn_orange w-1/4"}
-            title={"submit"}
+            variant={"btn_orange w-[40%]"}
+            title={"send message"}
           />
         </form>
       </div>
