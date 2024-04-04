@@ -11,7 +11,7 @@ const Register = () => {
           </h1>
           <Link
             href="https://forms.gle/7rpkGUD8eEBCr1WL6"
-            target="_"
+            target="_blank"
             className="btn_orange"
           >
             register here
