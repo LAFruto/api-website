@@ -1,3 +1,5 @@
+"use client"
+
 const Team = () => {
   return (
     <section className="max-container padding-container py-12 lg:py-24 flex-col flex`">

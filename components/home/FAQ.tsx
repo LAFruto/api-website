@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 import Image from "next/image";

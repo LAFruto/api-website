@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
@@ -7,7 +9,7 @@ type ButtonProps = {
   icon?: string;
   variant: string;
   full?: boolean;
-  children?: any;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -16,16 +18,16 @@ const Button = ({
   icon,
   variant,
   full,
-  children,
+  disabled,
 }: ButtonProps) => {
   return (
     <button
       className={`flexCenter border ${variant} ${full && "w-full"} `}
       type={type}
+      disabled={disabled}
     >
       <label className="whitespace-nowrap cursor-pointer">{title}</label>
       {icon && <Image src={icon} alt={title} width={24} height={24} />}
-      {children}
     </button>
   );
 };

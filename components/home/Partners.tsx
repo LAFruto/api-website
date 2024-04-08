@@ -1,3 +1,5 @@
+"use client"
+
 import { PARTNERS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +16,7 @@ const PartnerItem = ({ logo, name, link }: PartnerProps) => {
     <section className="flex flex-col items-center">
       <Link
         className="overflow-hidden transition duration-300 grayscale-[95%] hover:grayscale-0 hover:scale-110"
-        href={link}
+        href={link} target="_blank"
       >
         <Image src={logo} alt={name} width={125} height={125} unoptimized />
       </Link>

@@ -1,3 +1,5 @@
+"use client"
+
 import About_Hero from "../../components/about/About_Hero";
 import Officers from "@/components/about/Officers";
 import Timeline from "@/components/about/Timeline";

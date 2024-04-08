@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { SOCIALS } from "@/constants";
 import { SocialIcon } from "react-social-icons";

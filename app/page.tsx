@@ -1,5 +1,3 @@
-'use client'
-
 import Hero from "@/components/home/Hero";
 import Impact from "@/components/home/Impact";
 import Partners from "@/components/home/Partners";

@@ -1,3 +1,5 @@
+'use client'
+
 import { RECENTS } from "@/constants";
 import Image from "next/image";
 import { useEffect, useRef } from "react";

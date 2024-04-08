@@ -1,3 +1,5 @@
+"use client"
+
 import Banner from "../Banner";
 
 const Statements = () => {
