@@ -1,10 +1,8 @@
-"use client"
+'use client';
 
 import Image from "next/image";
 import Link from "next/link";
-
 import AnimatedArrow from "../AnimatedArrow";
-
 import { ACTIVITIES } from "@/constants";
 
 interface ActivityProps {
@@ -16,7 +14,7 @@ interface ActivityProps {
 
 const ActivityItem = ({ image, title, tags, url }: ActivityProps) => {
   return (
-    <Link href={url}>
+    <Link href={`/involvements/${url}`}>
       <div className="relative h-[400px] lg:h-[600px] w-full bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
         <Image
           src={image}
@@ -49,9 +47,9 @@ const ActivityItem = ({ image, title, tags, url }: ActivityProps) => {
 const Activities = () => {
   return (
     <section className="max-container padding-container py-24 flex flex-col lg:grid grid-cols-2 gap-8">
-      {ACTIVITIES.map((activity, index) => (
+      {ACTIVITIES.map((activity) => (
         <ActivityItem
-          // key={index}
+          key={activity.url}
           image={activity.image}
           title={activity.title}
           tags={activity.tags}

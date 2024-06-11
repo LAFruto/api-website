@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { SOCIALS } from "@/constants";
@@ -11,8 +11,11 @@ const Footer = () => {
         <div className="flex flex-col gap-4 col-span-12 lg:col-span-8 xl:col-span-6">
           <div className="flex flex-col gap-5">
             <ul className="regular-14 flex gap-4 text-gray-30">
-              {SOCIALS.map((social) => (
-                <li className="hover:-translate-y-1 ease-in-out transition">
+              {SOCIALS.map((social, index) => (
+                <li
+                  key={index}
+                  className="hover:-translate-y-1 ease-in-out transition"
+                >
                   <SocialIcon
                     url={social.link}
                     target="_blank"
@@ -30,9 +33,11 @@ const Footer = () => {
             Be Proactive, Lead Boldy.
           </h2>
         </div>
-        <hr className="w-full mt-6 black-50 bg-black-50 black-50 border-black-50 "/>
+        <hr className="w-full mt-6 black-50 bg-black-50 black-50 border-black-50 " />
         <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6">
-          <p className="hover:text-white ease-in-out transition duration-300 cursor-pointer">Privacy Notice</p>
+          <p className="hover:text-white ease-in-out transition duration-300 cursor-pointer">
+            Privacy Notice
+          </p>
           <p>&copy; Association of Proactive Innovators 2024</p>
         </div>
       </div>

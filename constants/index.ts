@@ -82,25 +82,25 @@ export const RECENTS = [
         image: "/images/involvement_bigpp.jpg",
         title: "Breaking into Greatness Programming with Python",        
         tags: ["February 2024", "Workshop"],
-        url: "test",
+        url: "breaking-into-greatness-programming-with-python",
     },
     {
         image: "/images/involvement_teambuilding.png",
         title: "API's First Team-Building",        
         tags: ["November 2023"],
-        url: "test",
+        url: "apis-first-team-building",
     },
     {
         image: "/images/involvement_pjdsc.png",
         title: "BPI's Philippine Junior Data Science Competition",        
         tags: ["November 2023", "Competition"],
-        url: "test",
+        url: "bpis-philippine-junior-data-science-competition",
     },
     {
         image: "/images/involvement_zerotohero.png",
         title: "From Zero to Hero: Introduction to Java",        
         tags: ["September 2023"],
-        url: "test",
+        url: "from-zero-to-hero",
     },
 ];
 
@@ -294,30 +294,40 @@ export const ACTIVITIES = [
         image: "/images/involvement_bigpp.jpg",
         title: "Breaking into Greatness Programming with Python",        
         tags: ["February 2024", "Workshop"],
-        url: "test",
+        url: "breaking-into-greatness-programming-with-python",
+        text: "activity1"
+
     },
     {
         image: "/images/involvement_teambuilding.png",
         title: "API's First Team-Building",        
         tags: ["November 2023"],
-        url: "test",
+        url: "apis-first-team-building",
+        text: "activity2"
+
     },
     {
         image: "/images/involvement_pjdsc.png",
         title: "BPI's Philippine Junior Data Science Competition",        
         tags: ["November 2023", "Competition"],
-        url: "test",
+        url: "bpis-philippine-junior-data-science-competition",
+        text: "activity3"
+
     },
     {
         image: "/images/involvement_zerotohero.png",
         title: "From Zero to Hero: Introduction to Java",        
         tags: ["September 2023"],
-        url: "test",
+        url: "from-zero-to-hero",
+        text: "activity4"
+
     },
     {
         image: "/images/involvement_ctf.png",
         title: "Trend University Capture the Flag",        
         tags: ["October 2023"],
-        url: "test",
+        url: "trend-university-capture-the-flag",
+        text: "activity5"
+
     },
 ];

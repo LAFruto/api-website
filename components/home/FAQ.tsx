@@ -57,7 +57,7 @@ const FAQItem = ({
             <h3 className="bold-40">{"0" + (index + 1)}</h3>
           </div>
         </div>
-        <div className="w-full gap-x-16 justify-center items-start flex flex-col-reverse lg:flex-row">
+        <div className="w-full gap-x-16 jushttps://www.canva.com/design/DAGCLfDkr3I/i4A4WJ0QWc0DCUJXsBJtSA/edit?utm_content=DAGCLfDkr3I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebuttontify-center items-start flex flex-col-reverse lg:flex-row">
           <p className="regular-16">{answer}</p>
         </div>
       </div>
