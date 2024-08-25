@@ -5,17 +5,25 @@ import Recents from "@/components/home/Recents";
 import Team from "@/components/home/Team";
 import FAQ from "@/components/home/FAQ";
 import Register from "@/components/Register";
+import { db } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
+  const recents = await db.involvement.findMany({
+    orderBy: {
+      date: "desc",
+    },
+    take: 5,
+  });
+
   return (
     <>
       <Hero />
       <Partners />
       <Impact />
       <Team />
-      <Recents />
+      <Recents recents={recents} />
       <FAQ />
       <Register />
     </>
-  )
+  );
 }

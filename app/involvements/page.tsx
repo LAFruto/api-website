@@ -1,17 +1,17 @@
-"use client"
-
-import Involvements_Hero from "@/components/involvements/Involvements_Hero";
-import Activities from "@/components/involvements/Activities";
+import { db } from "@/lib/db";
+import InvolvementsHero from "@/components/involvements/InvolvementsHero";
 import Register from "@/components/Register";
+import Involvements from "@/components/involvements/Involvements";
 
-const Involvements = () => {
-  return ( 
+const InvolvementsPage = async () => {
+  const involvements = await db.involvement.findMany();
+  return (
     <>
-      <Involvements_Hero />
-      <Activities />
+      <InvolvementsHero />
+      <Involvements involvements={involvements} />
       <Register />
-    </>  
+    </>
   );
-}
- 
-export default Involvements;
+};
+
+export default InvolvementsPage;

@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { RECENTS } from "@/constants";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 import Button from "../Button";
 import Link from "next/link";
 import AnimatedArrow from "../AnimatedArrow";
+import { Involvement, Tag } from "@prisma/client";
 
 declare global {
   namespace JSX {
@@ -20,10 +20,7 @@ declare global {
         },
         HTMLElement
       >;
-      "swiper-slide": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
+      "swiper-slide": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
@@ -31,13 +28,16 @@ declare global {
 interface RecentProps {
   image: string;
   title: string;
-  tags: string[];
+  date: Date;
   url: string;
+  tags: Tag[];
 }
 
-const RecentItem = ({ image, title, tags, url }: RecentProps) => {
+const RecentItem = ({ image, title, tags, date, url }: RecentProps) => {
+  const month = date.toLocaleString("en-US", { month: "long" }).toUpperCase();
+  const year = date.getFullYear();
   return (
-    <Link href={url}>
+    <Link href={`/involvements/${url}`}>
       <div className="relative h-[600px] w-full bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
         <Image
           src={image}
@@ -46,19 +46,20 @@ const RecentItem = ({ image, title, tags, url }: RecentProps) => {
           className="relative object-cover ease-in-out duration-300 group-hover:scale-[1.1]  group-hover:brightness-90 group-hover:saturate-100 group-hover:sepia-30 group-hover:opacity-70 !overflow-hidden cursor-pointer"
         />
         <div className="w-[80%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl gap-4 ease-in-out duration-300 hover:bg-orange-90">
-          <div className="flex gap-2 ">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="py-2 px-2.5 border-[1px] border-black-50 rounded-full regular-14 "
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="flex gap-2">
+            <span key={month} className="py-1 px-3 border-[1px] border-black-50 rounded-xl text-xs lg:text-sm">
+              {`${month} ${year}`}
+            </span>
+            {tags.length > 0 &&
+              tags.map((tag, index) => (
+                <span key={index} className="py-1 px-3 border-[1px] border-black-50 rounded-xl text-xs lg:text-sm">
+                  {tag}
+                </span>
+              ))}
           </div>
-          <h4 className="bold-20 lg:bold-32 !leading-normal">{title}</h4>
+          <h4 className="text-xl md:text-3xl lg:text-4xl font-extrabold !leading-normal">{title}</h4>
           <div className="flexCenter gap-1 mt-0.5">
-            <h6 className="regular-16">READ MORE</h6>
+            <h6 className="text-sm lg:text-base">READ MORE</h6>
             <AnimatedArrow />
           </div>
         </div>
@@ -67,7 +68,7 @@ const RecentItem = ({ image, title, tags, url }: RecentProps) => {
   );
 };
 
-const Recents = () => {
+const Recents = ({ recents }: { recents: Involvement[] }) => {
   const swiperRef = useRef<any>(null);
 
   useEffect(() => {
@@ -107,34 +108,29 @@ const Recents = () => {
     <section className="bg-orange-50 rounded-lg py-12 lg:py-16">
       <div className="max-container padding-container mb-4 py-4 lg:py-12 lg:pb-16">
         <div className="px-0 xl:px-20 flex flex-col lg:grid grid-cols-2 gap-4">
-          <h1 className="bold-52 lg:bold-64 col-span-1">
-            Our recent milestones
-          </h1>
+          <h1 className="bold-52 lg:bold-64 col-span-1">Our recent milestones</h1>
           <div className="flex flex-col justify-between items-start gap-8">
             <p>
-              Explore our latest triumphs and accolades as we push innovation
-              boundaries. From winning competitions to pioneering workshops.
+              Explore our latest triumphs and accolades as we push innovation boundaries. From winning competitions to
+              pioneering workshops.
             </p>
             <Link href={"/involvements"}>
-              <Button
-                type={"button"}
-                title={"explore our involvements"}
-                variant={"btn_blue"}
-              />
+              <Button type={"button"} title={"explore our involvements"} variant={"btn-blue"} />
             </Link>
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full pr-[8%] px-[5%] ">
         <swiper-container init="false" ref={swiperRef}>
-          {RECENTS.map((recent, index) => (
+          {recents.map((recent, index) => (
             <swiper-slide key={index}>
               <RecentItem
                 key={recent.url}
                 image={recent.image}
                 title={recent.title}
-                tags={recent.tags}
                 url={recent.url}
+                date={recent.date}
+                tags={recent.tags}
               />
             </swiper-slide>
           ))}

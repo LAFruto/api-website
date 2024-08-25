@@ -17,28 +17,15 @@ const Navbar = () => {
   return (
     <div className="z-50 !fixed top-0 left-0 right-0 bottom-auto w-full min-h-28 items-center pl-[5%] pr-[5%] flex bg-black">
       <div className="max-w-[80rem] w-full h-full px-8 py-3.5 gap-8 flexBetween items-center bg-white m-auto relative shadow-xl rounded-2xl">
-        {/* DESKOTOP NAVBAR */}
-        <a>
-          <Image
-            src="/images/text_logo2.png"
-            alt="menu"
-            width={100}
-            height={100}
-            className="inline-block cursor-pointer"
-          />
-        </a>
+        <Link href="/">
+          <Image src="/images/text_logo2.png" alt="API Logo" width={100} height={100} className="inline-block" />
+        </Link>
 
         <nav className="h-full items-center static hidden lg:flex">
           <ul className="hidden h-full gap-4 lg:flex">
             {NAV_LINKS.map((link, index) => (
-              <li
-                key={index}
-                className="transition duration-500 ease-in-out rounded-full px-6 py-2 hover:bg-gray-10"
-              >
-                <Link
-                  href={link.href}
-                  className="bold-16 text-black-90 flexCenter cursor-pointer"
-                >
+              <li key={index} className="transition duration-500 ease-in-out rounded-full px-6 py-2 hover:bg-gray-10">
+                <Link href={link.href} className="font-bold text-black-90 flexCenter cursor-pointer">
                   {link.label}
                 </Link>
               </li>
@@ -46,7 +33,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <Link href="/contact" className="btn_orange hidden lg:flex">
+        <Link href="/contact" className="btn-orange hidden lg:flex">
           contact us
         </Link>
 
@@ -80,28 +67,18 @@ const Navbar = () => {
         </div>
         <nav
           className={`lg:hidden shadow-xl rounded-2xl px-8 text-right left-0 right-0 absolute ease-in-out bg-white duration-400 transition-all
-              ${
-                nav
-                  ? "top-20  py-8 h-[280px] "
-                  : "top-20 h-0 px-8 py-0 overflow-hidden"
-              }
+              ${nav ? "top-20 py-8 h-[280px] " : "top-20 h-0 px-8 py-0 overflow-hidden"}
             `}
         >
-          <ul className={`h-full gap-4 flex-col flex`}>
+          <ul className={`h-full flex-col flex justify-between`}>
             {NAV_LINKS.map((link, index) => (
-              <li
-                key={index}
-                className="transition duration-500 ease-in-out rounded-full px-6 py-2 hover:bg-gray-10"
-              >
-                <Link
-                  href={link.href}
-                  className="bold-16 text-black-90 flexCenter cursor-pointer"
-                >
+              <li key={index} className="transition duration-500 ease-in-out rounded-full px-6 py-2 hover:bg-gray-10">
+                <Link href={link.href} className="font-bold text-md flexCenter cursor-pointer">
                   {link.label}
                 </Link>
               </li>
             ))}
-            <Link href="/contact" className="btn_orange text-center">
+            <Link href="/contact" className="btn-orange text-center">
               contact us
             </Link>
           </ul>

@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Officer {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  firstName String
+  lastName  String
+  position  String
+  image     String
+  socials   Social[]
+
+  @@unique([firstName, lastName])
+}
+
+model Timeline {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  image       String
+  date        DateTime @unique
+  description String
+}
+
+model Involvement {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  url      String   @unique
+  title    String
+  markdown String
+  image    String
+  date     DateTime
+  socials  Social[]
+  tags     Tag[]
+}
+
+model Social {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  involvementId String?    @db.ObjectId
+  officerId     String?    @db.ObjectId
+  url           String
+  type          SocialType
+
+  Involvement Involvement? @relation(fields: [involvementId], references: [id])
+  Officer     Officer?     @relation(fields: [officerId], references: [id])
+}
+
+model Admin {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
+  username String @unique
+}
+
+enum Tag {
+  WORKSHOP
+  COMPETITION
+}
+
+enum SocialType {
+  FACEBOOK
+  LINKEDIN
+  INSTAGRAM
+  GITHUB
+}

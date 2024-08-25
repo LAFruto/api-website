@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +14,7 @@ const Register = () => {
           <Link
             href="https://forms.gle/7rpkGUD8eEBCr1WL6"
             target="_blank"
-            className="btn_orange"
+            className="btn-orange"
           >
             register here
           </Link>

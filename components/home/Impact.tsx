@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useEffect, useRef } from "react";
 
@@ -21,10 +21,7 @@ declare global {
         },
         HTMLElement
       >;
-      "swiper-slide": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
+      "swiper-slide": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
@@ -50,25 +47,14 @@ interface TestimonialProps {
   quote: string;
 }
 
-const TestimonialItem = ({
-  image,
-  name,
-  position,
-  quote,
-}: TestimonialProps) => {
+const TestimonialItem = ({ image, name, position, quote }: TestimonialProps) => {
   return (
     <div className="w-20% text-white flexCenter flex-col gap-4">
-      <Image
-        className="rounded-full"
-        src={image}
-        alt={name}
-        width={150}
-        height={150}
-      />
-      <h6 className="bold-16 uppercase">
+      <Image className="rounded-full" src={image} alt={name} width={150} height={150} />
+      <h6 className="text-bold uppercase">
         {name} / {position}
       </h6>
-      <p className="regular-16 w-full lg:w-[50%] text-center">"{quote}"</p>
+      <p className="w-full lg:w-[50%] text-center">"{quote}"</p>
       <div className="mt-8"></div>
     </div>
   );
