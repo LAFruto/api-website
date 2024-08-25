@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useTransition } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Button from "../Button";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
