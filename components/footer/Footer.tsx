@@ -8,12 +8,12 @@ const Footer = () => {
       <div className="padding-container max-container w-full flex flex-col justify-between">
         <div className="flex flex-col gap-4 col-span-12 lg:col-span-8 xl:col-span-6">
           <div className="flex flex-col gap-5">
-            <ul className="flex gap-4">
+            <ul className="flex space-x-4">
               {SOCIALS.map((social, index) => {
                 const Icon = social.icon;
                 return (
                   <li key={index} className="hover:-translate-y-1 ease-in-out transition">
-                    <a href={social.link} target="_blank" rel="noopener noreferrer" aria-label={Icon.muiName}>
+                    <a href={social.link} target="_blank" rel="noopener noreferrer">
                       <Icon className={`rounded-lg h-10 w-10 fill-neutral-900`} />
                     </a>
                   </li>

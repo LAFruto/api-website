@@ -24,7 +24,7 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
                 const Icon = mapToIcon(social.type);
                 return (
                   <div key={index} className="hover:-translate-y-1 ease-in-out transition">
-                    <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={Icon.muiName}>
+                    <a href={social.url} target="_blank" rel="noopener noreferrer">
                       <Icon />
                     </a>
                   </div>
