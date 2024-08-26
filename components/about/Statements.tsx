@@ -7,7 +7,7 @@ const Statements = () => {
     <div>
       <Banner image={"/images/statement_1.png"} title={"mission banner"} />
       <div className="relative z-10 bg-orange-50 rounded-xl py-16 my-[-.5rem]">
-        <div className="max-container padding-container flex flex-col">
+        <div className="max-container padding-container flex flex-col  text-neutral-900">
           <h4 className="bold-32">OUR MISSION</h4>
           <p className="mt-6">
             To cultivate a dynamic community of tech and innovation enthusiasts in MMCM and provide Mapúa Malayans a

@@ -26,18 +26,19 @@ const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
           index % 2 === 0 ? "lg:order-1 lg:text-right" : "lg:order-3 lg:text-left"
         } flex flex-col gap-2 justify-center text-center mb-4 p-6 lg:mb-0`}
       >
-        <h4 className="bold-20 mt-5 capitalize">{month}</h4>
-        <p>{description}</p>
+        <h4 className="bold-20 mt-5 capitalize  text-neutral-900">{month}</h4>
+        <p className=" text-neutral-900">{description}</p>
       </div>
     </div>
   );
 };
+``;
 
 const TimelineList = ({ timeline }: { timeline: TIMELINE[] }) => {
   const displayedYears = new Set<string>();
   return (
     <section className="max-container padding-container flexCenter flex-col py-24">
-      <h2 className="bold-40 lg:bold-64 mb-10">How we started.</h2>
+      <h2 className="bold-40 lg:bold-64 mb-10  text-neutral-900">How we started.</h2>
       {timeline.map((timeline, index) => {
         const year = new Date(timeline.date).getFullYear().toString();
         const month = timeline.date.toLocaleString("default", {
@@ -50,7 +51,7 @@ const TimelineList = ({ timeline }: { timeline: TIMELINE[] }) => {
         return (
           <div key={index} className="flexCenter flex-col">
             {showYear && (
-              <div className="bg-orange-50 border-black rounded-xl">
+              <div className="bg-orange-50 border-black  text-neutral-900 rounded-xl">
                 <h3 className="bold-32 py-4 px-12">{year}</h3>
               </div>
             )}

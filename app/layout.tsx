@@ -18,14 +18,10 @@ export const metadata: Metadata = {
   description: "API Mapúa-MCM's Website",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn("bg-beige-50", inter.className)}>
+      <body className={cn("bg-beige-50  text-neutral-900", inter.className)}>
         <Navbar />
         <Suspense fallback={<Loading />}>
           <main>{children}</main>

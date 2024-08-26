@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { mapToIcon } from "@/lib/utils";
 import { OFFICER } from "@/constants";
+import LinkedInIcon from "../icons/LinkedinIcon";
 
 const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER) => {
   return (
@@ -17,22 +18,22 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
       />
       <div className="w-[90%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl space-y-2 ease-in-out duration-300 hover:bg-orange-90">
         <div className="flex justify-between w-full items-center">
-          <h4 className="bold-20">{`${firstName} ${lastName}`}</h4>
+          <h4 className="bold-20  text-neutral-900">{`${firstName} ${lastName}`}</h4>
           <div className="flex space-x-2">
             {socials &&
               socials.map((social, index) => {
                 const Icon = mapToIcon(social.type);
+                console.log(Icon);
                 return (
                   <div key={index} className="hover:-translate-y-1 ease-in-out transition">
-                    <a href={social.url} target="_blank" rel="noopener noreferrer">
-                      <Icon />
-                    </a>
+                    <Icon className={`h-5 w-5 fill-neutral-900`} />
+                    <a href={social.url} target="_blank" rel="noopener noreferrer"></a>
                   </div>
                 );
               })}
           </div>
         </div>
-        <p className="text-sm">{position}</p>
+        <p className="text-sm text-neutral-900">{position}</p>
       </div>
     </div>
   );
@@ -41,7 +42,7 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
 const Officers = ({ officers }: { officers: OFFICER[] }) => {
   return (
     <section className="flexCenter flex-col py-24 gap-8">
-      <h2 className="bold-40 lg:bold-64 capitalize">Meet the Officers!</h2>
+      <h2 className="bold-40 lg:bold-64 capitalize  text-neutral-900">Meet the Officers!</h2>
       <div className="padding-container max-container justify-items-center gap-10 place-content-center md:grid lg:grid-cols-2 xl:grid-cols-3 flex flex-col">
         {officers.map((officer, index) => (
           <OfficerItem

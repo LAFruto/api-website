@@ -11,6 +11,7 @@ const Footer = () => {
             <ul className="flex space-x-4">
               {SOCIALS.map((social, index) => {
                 const Icon = social.icon;
+
                 return (
                   <li key={index} className="hover:-translate-y-1 ease-in-out transition">
                     <a href={social.link} target="_blank" rel="noopener noreferrer">

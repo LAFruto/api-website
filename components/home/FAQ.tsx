@@ -79,7 +79,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="max-container padding-container max-container padding-container py-12 lg:py-24 flex-col flex items-center">
+    <section className="max-container padding-container max-container padding-container py-12  text-neutral-900 lg:py-24 flex-col flex items-center">
       <h1 className="bold-46 text-center pb-12 lg:bold-64">
         Frequently Asked
         <br /> Questions

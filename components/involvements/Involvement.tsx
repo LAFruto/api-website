@@ -49,7 +49,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
                       type="button"
                       className="flex p-3 rounded-full bg-orange-50 border-blue-50 border mr-[-.5rem] hover:bg-orange-90 transition"
                     >
-                      <Icon className="w-5 h-5 rounded-sm fill-neutral-900" />
+                      <Icon className="w-5 h-5 rounded-sm" />
                     </a>
                   );
                 })}
