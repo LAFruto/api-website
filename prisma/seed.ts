@@ -192,14 +192,14 @@ async function seed() {
       socials: [],
     },
     {
-      image: "/images/officers/Boncales.png",
+      image: "/images/officers/boncales.png",
       firstName: "Jose Donie",
       lastName: "Boncales",
       position: "Finance & Logistics Member",
       socials: [],
     },
     {
-      image: "/images/officers/Lechoncito.png",
+      image: "/images/officers/lechoncito.png",
       firstName: "Josef Neil",
       lastName: "Lechoncito",
       position: "Finance & Logistics Member",
