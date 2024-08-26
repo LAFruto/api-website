@@ -1,4 +1,3 @@
-import { SocialType } from "@prisma/client";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -20,13 +19,13 @@ export function formatDateToCustomString(date: Date): string {
 
 export function mapToIcon(type: any): any {
   switch (type) {
-    case SocialType.FACEBOOK || "FACEBOOK":
+    case "FACEBOOK":
       return Facebook;
-    case SocialType.INSTAGRAM || "INSTAGRAM":
+    case "INSTAGRAM":
       return Instagram;
-    case SocialType.LINKEDIN || "LINKEDIN":
+    case "LINKEDIN":
       return LinkedIn;
-    case SocialType.GITHUB || "GITHUB":
+    case "GITHUB":
       return GitHub;
     default:
       return Facebook;

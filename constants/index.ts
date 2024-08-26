@@ -1,7 +1,7 @@
-import { Tag } from "@prisma/client";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Socials } from "@/data";
 
 export const NAV_LINKS = [
   { href: "/", key: "home", label: "HOME" },
@@ -125,147 +125,411 @@ export const FAQs = [
   },
 ];
 
-// About Page
+export type TIMELINE = {
+  image: string;
+  date: Date;
+  description: string;
+};
+
 export const TIMELINES = [
   {
-    year: 2023,
-    activity: [
-      {
-        image: "/images/timeline_july2023.png",
-        month: "July",
-        description: "The Association of Proactive Innovators is founded",
-      },
-      {
-        image: "/images/timeline_august2023.jpg",
-        month: "August",
-        description: "API officially partners with DICE",
-      },
-      {
-        image: "/images/timeline_september2023.jpg",
-        month: "September",
-        description: "API holds its first ever workshop (Java Zero to Hero)",
-      },
-      {
-        image: "/images/timeline_november2023.jpg",
-        month: "November",
-        description: "API holds its first team-building activity",
-      },
-    ],
+    image: "/images/timeline/july2023.png",
+    date: new Date("2023-07-01"),
+    description: "The Association of Proactive Innovators is founded",
   },
   {
-    year: 2024,
-    activity: [
-      {
-        image: "/images/timeline_february2024.png",
-        month: "February",
-        description: "API holds its second workshop (Python: Breaking Into Greatness)",
-      },
-    ],
+    image: "/images/timeline/august2023.jpg",
+    date: new Date("2023-8-01"),
+    description: "API officially partners with DICE",
   },
   {
-    year: 2025,
-    activity: [],
+    image: "/images/timeline/september2023.jpg",
+    date: new Date("2023-09-01"),
+    description: "API holds its first ever workshop (Java Zero to Hero)",
+  },
+  {
+    image: "/images/timeline/november2023.jpg",
+    date: new Date("2023-11-01"),
+    description: "API holds its first team-building activity",
+  },
+  {
+    image: "/images/timeline/february2024.png",
+    date: new Date("2024-02-01"),
+    description: "API holds its second workshop (Python: Breaking Into Greatness)",
   },
 ];
+
+export type OFFICER = {
+  image: string;
+  firstName: string;
+  lastName: string;
+  position: string;
+  socials: Socials[];
+};
 
 export const OFFICERS = [
   {
-    image: "/images/officers/cordero.jpg",
+    image: "/images/officers/cordero.png",
     firstName: "Kiah Nhame",
     lastName: "Cordero",
     position: "President",
-    link: "https://github.com/",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/kiahnhamecordero/ ",
+        type: "LINKEDIN",
+      },
+    ],
   },
   {
-    image: "/images/officers/diosay.jpg",
-    firstName: "Ryan Mark",
-    lastName: "Diosay",
+    image: "/images/officers/pangilinan.png",
+    firstName: "Anya",
+    lastName: "Pangilinan",
+    position: "Internal Vice President",
+    socials: [],
+  },
+  {
+    image: "/images/officers/royeras.png",
+    firstName: "Mc Curvin",
+    lastName: "Royeras",
+    position: "External Vice President",
+    socials: [],
+  },
+  {
+    image: "/images/officers/nodado.png",
+    firstName: "Alfred Dads",
+    lastName: "Nodado",
     position: "Secretary",
-    link: "https://github.com/",
+    socials: [],
   },
   {
-    image: "/images/officers/villadores.jpg",
-    firstName: "Janrev Lance",
-    lastName: "Villadores",
-    position: "PIO",
-    link: "https://github.com/",
+    image: "/images/officers/cabania.png",
+    firstName: "Anikka",
+    lastName: "Cabania",
+    position: "Treasurer",
+    socials: [],
   },
   {
-    image: "/images/officers/gonzaga.jpg",
-    firstName: "Stacey Andrew",
-    lastName: "Gonzaga",
-    position: "Research and Development Head",
-    link: "https://github.com/",
-  },
-  {
-    image: "/images/officers/fruto.jpg",
-    firstName: "Luis Angelo",
-    lastName: "Fruto",
-    position: "Technical Operations Head",
-    link: "https://github.com/",
-  },
-  {
-    image: "/images/officers/acquiat.jpg",
+    image: "/images/officers/acquiat.png",
     firstName: "Gyrro",
     lastName: "Acquiat",
-    position: "Logistics Member",
-    link: "https://github.com/",
+    position: "Auditor",
+    socials: [],
   },
   {
-    image: "/images/officers/dayuno.jpg",
-    firstName: "Jhon Lloyd Dayuno",
-    lastName: "",
-    position: "Technical Operations Member",
-    link: "https://github.com/",
+    image: "/images/officers/diosay.png",
+    firstName: "Ryan Mark",
+    lastName: "Diosay",
+    position: "Public Informations Officer",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/ryan-mark-diosay-08891b293/ ",
+        type: "LINKEDIN",
+      },
+    ],
   },
   {
-    image: "/images/officers/toyoda.jpg",
+    image: "/images/officers/gonzaga.png",
+    firstName: "Stacey",
+    lastName: "Gonzaga",
+    position: "Research & Development Head",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/stacey-&rew-gonzaga/ ",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/toyoda.png",
     firstName: "Jaen Rafael ",
     lastName: "Toyoda",
     position: "Research & Development Member",
-    link: "https://github.com/",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/jaen-rafael-toyoda-06936b252/ ",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/agunod.png",
+    firstName: "Juan Miguel",
+    lastName: "Agunod",
+    position: "Research & Development Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/devera.png",
+    firstName: "Laurence",
+    lastName: "Devera",
+    position: "Research & Development Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/comon.png",
+    firstName: "Rashid",
+    lastName: "Comon",
+    position: "Creatives & Promotions Head",
+    socials: [],
+  },
+  {
+    image: "/images/officers/blanco.png",
+    firstName: "Carlos",
+    lastName: "Blanco",
+    position: "Creatives & Promotions Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/navarez.png",
+    firstName: "Jasper",
+    lastName: "Navarez",
+    position: "Creatives & Promotions Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/sato.png",
+    firstName: "Hanna",
+    lastName: "Sato",
+    position: "Creatives & Promotions Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/ortega.png",
+    firstName: "Arabella",
+    lastName: "Ortega",
+    position: "Creatives & Promotions Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/lobaton.png",
+    firstName: "Denise",
+    lastName: "Lobaton",
+    position: "Creatives & Promotions Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/yap.png",
+    firstName: "Christopher",
+    lastName: "Yap",
+    position: "Social Media & Comms Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/querequincia.png",
+    firstName: "Mark II",
+    lastName: "Querequincia",
+    position: "Social Media & Comms Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/boncales.png",
+    firstName: "Jose Donie",
+    lastName: "Boncales",
+    position: "Finance & Logistics Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/lechoncito.png",
+    firstName: "Josef Neil",
+    lastName: "Lechoncito",
+    position: "Finance & Logistics Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/fruto.png",
+    firstName: "Luis Angelo",
+    lastName: "Fruto",
+    position: "Technical Operations Head",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/luis-angelo-fruto-8b868524b/ ",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/dayuno.png",
+    firstName: "Jhon Lloyd",
+    lastName: "Dayuno",
+    position: "Technical Operations Member",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/jhon-lloyd-dayuno-570646251/ ",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/mar.png",
+    firstName: "Keian",
+    lastName: "Mar",
+    position: "Technical Operations Member",
+    socials: [],
+  },
+  {
+    image: "/images/officers/villadores.png",
+    firstName: "Janrev",
+    lastName: "Villadores",
+    position: "Pitching & Innovation Head",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/janrev-lance-villadores/",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/alovera.png",
+    firstName: "John Lawrence",
+    lastName: "Alovera",
+    position: "Pitching & Innovation Head",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/janrev-lance-villadores/",
+        type: "LINKEDIN",
+      },
+    ],
+  },
+  {
+    image: "/images/officers/diaz.png",
+    firstName: "Shanica",
+    lastName: "Diaz",
+    position: "Secretariat Committee",
+    socials: [],
   },
 ];
 
-export const INVOLVEMENTS = [
-  {
-    title: "Breaking into Greatness Programming with Python",
-    image: "/images/involvement_bigpp.jpg",
-    tags: [Tag.WORKSHOP] as Tag[],
-    url: "breaking-into-greatness-programming-with-python",
-    text: "activity1",
-    date: new Date("2024-02-01"),
-  },
-  {
-    image: "/images/involvement_teambuilding.png",
-    title: "API's First Team-Building",
-    tags: [] as Tag[],
-    url: "apis-first-team-building",
-    text: "activity2",
-    date: new Date("2023-11-01"),
-  },
-  {
-    image: "/images/involvement_pjdsc.png",
-    title: "BPI's Philippine Junior Data Science Competition",
-    tags: [Tag.COMPETITION] as Tag[],
-    url: "bpis-philippine-junior-data-science-competition",
-    text: "activity3",
-    date: new Date("2023-11-01"),
-  },
-  {
-    image: "/images/involvement_zerotohero.png",
-    title: "From Zero to Hero: Introduction to Java",
-    tags: [Tag.WORKSHOP] as Tag[],
-    url: "from-zero-to-hero",
-    text: "activity4",
-    date: new Date("2023-09-01"),
-  },
-  {
-    image: "/images/involvement_ctf.png",
-    title: "Trend University Capture the Flag",
-    tags: [Tag.COMPETITION] as Tag[],
-    url: "trend-university-capture-the-flag",
-    text: "activity5",
-    date: new Date("2023-10-01"),
-  },
-];
+// const INVOLVEMENTS = [
+//   {
+//     title: "WordPress Davao Meetup #23",
+//     image: "/images/involvements/thumbnail/wordpress.jpg",
+//     tags: [Tag.WORKSHOP],
+//     url: "wordpress-davao-meetup",
+//     markdown: "wordpress",
+//     date: new Date("2024-04-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+//   {
+//     title: "MCITS & IT Olympiad 2024",
+//     image: "/images/involvements/thumbnail/mcits2024.jpg",
+//     tags: [.COMPETITIOTagN],
+//     url: "mcits-2024",
+//     markdown: "mcits2024",
+//     date: new Date("2024-02-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Breaking into Greatness Programming with Python",
+//     image: "/images/involvements/thumbnail/bigpp.png",
+//     tags: [],
+//     url: "breaking-into-greatness-programming-with-python",
+//     markdown: "bigpp",
+//     date: new Date("2024-02-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+//   {
+//     image: "/images/involvements/thumbnail/teambuilding.png",
+//     title: "API's First Team-Building",
+//     tags: [],
+//     url: "apis-first-team-building",
+//     markdown: "teambuilding",
+//     date: new Date("2023-11-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+//   {
+//     image: "/images/involvements/thumbnail/pjdsc.png",
+//     title: "BPI's Philippine Junior Data Science Competition",
+//     tags: [Tag.COMPETITION],
+//     url: "bpis-philippine-junior-data-science-competition",
+//     markdown: "pjdsc",
+//     date: new Date("2023-11-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+//   {
+//     image: "/images/involvements/thumbnail/zerotohero.png",
+//     title: "From Zero to Hero: Introduction to Java",
+//     tags: [Tag.WORKSHOP],
+//     url: "from-zero-to-hero",
+//     markdown: "zerotohero",
+//     date: new Date("2023-09-01"),
+//     socials: [
+//       {
+//         url: "https://www.facebook.com",
+//         type: "FACEBOOK",
+//       },
+//       {
+//         url: "https://www.instagram.com",
+//         type: "INSTAGRAM",
+//       },
+//       {
+//         url: "https://www.facebook.com",
+//         type: "LINKEDIN",
+//       },
+//     ],
+//   },
+// ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { Timeline } from "@prisma/client";
+import { TIMELINE } from "@/constants";
 import Image from "next/image";
 
 interface ActivityProps {
@@ -33,7 +33,7 @@ const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
   );
 };
 
-const TimelineList = ({ timeline }: { timeline: Timeline[] }) => {
+const TimelineList = ({ timeline }: { timeline: TIMELINE[] }) => {
   const displayedYears = new Set<string>();
   return (
     <section className="max-container padding-container flexCenter flex-col py-24">
@@ -48,7 +48,7 @@ const TimelineList = ({ timeline }: { timeline: Timeline[] }) => {
           displayedYears.add(year);
         }
         return (
-          <div key={timeline.id} className="flexCenter flex-col">
+          <div key={index} className="flexCenter flex-col">
             {showYear && (
               <div className="bg-orange-50 border-black rounded-xl">
                 <h3 className="bold-32 py-4 px-12">{year}</h3>
@@ -56,7 +56,7 @@ const TimelineList = ({ timeline }: { timeline: Timeline[] }) => {
             )}
             {showYear && <div className={`flex w-0 border-[1px] border-blue-50 h-12 lg:h-96 lg:hidden`} />}
             <TimelineItem
-              key={timeline.id}
+              key={index}
               image={timeline.image}
               month={month}
               description={timeline.description}
