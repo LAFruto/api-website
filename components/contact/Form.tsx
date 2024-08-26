@@ -32,7 +32,6 @@ const Form = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
-    console.log(data);
     startTransition(async () => {
       const token = recaptchaRef.current?.getValue();
 

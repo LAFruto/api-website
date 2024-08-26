@@ -62,7 +62,7 @@ const Officers = ({ officers }: { officers: OfficersWithSocials[] }) => {
   return (
     <section className="flexCenter flex-col py-24 gap-8">
       <h2 className="bold-40 lg:bold-64 capitalize">Meet the Officers!</h2>
-      <div className="padding-container max-container justify-items-center gap-10 place-content-center md:grid md:grid-cols-2 xl:grid-cols-3 flex flex-col">
+      <div className="padding-container max-container justify-items-center gap-10 place-content-center md:grid lg:grid-cols-2 xl:grid-cols-3 flex flex-col">
         {officers.map((officer) => (
           <OfficerItem
             key={officer.lastName}

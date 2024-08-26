@@ -18,15 +18,15 @@ export function formatDateToCustomString(date: Date): string {
   return date.toLocaleDateString("en-GB", options);
 }
 
-export function mapToIcon(type: SocialType): any {
+export function mapToIcon(type: any): any {
   switch (type) {
-    case SocialType.FACEBOOK:
+    case SocialType.FACEBOOK || "FACEBOOK":
       return Facebook;
-    case SocialType.INSTAGRAM:
+    case SocialType.INSTAGRAM || "INSTAGRAM":
       return Instagram;
-    case SocialType.LINKEDIN:
+    case SocialType.LINKEDIN || "LINKEDIN":
       return LinkedIn;
-    case SocialType.GITHUB:
+    case SocialType.GITHUB || "GITHUB":
       return GitHub;
     default:
       return Facebook;

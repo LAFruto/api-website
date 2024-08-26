@@ -1,23 +1,9 @@
-"use server";
-
-import { db } from "@/lib/db";
-
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
-export const getInvolvement = async (pathname: string) => {
-  const involvement = await db.involvement.findUnique({
-    where: {
-      url: pathname,
-    },
-    include: {
-      socials: true,
-    },
-  });
-
-  return involvement;
-};
+export const socialTypes = ["FACEBOOK", "LINKEDIN", "GITHUB", "INSTAGRAM"];
+export type SocialType = (typeof socialTypes)[number];
 
 export interface Content {
   title: string;
@@ -27,7 +13,13 @@ export interface Content {
   date: string;
   tags: string[];
   body: string;
+  socials: Socials[];
   published: boolean;
+}
+
+export interface Socials {
+  url: string;
+  type: SocialType;
 }
 
 const CONTENT_DIR_PATH = "public/markdown";
