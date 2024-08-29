@@ -391,7 +391,7 @@ export const OFFICERS = [
     ],
   },
   {
-    image: "/images/officers/mar.png",
+    image: "/images/officers/marr.png",
     firstName: "Keian",
     lastName: "Mar",
     position: "Technical Operations Member",
