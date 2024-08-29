@@ -11,6 +11,7 @@ export interface Content {
   thumbnail: string;
   slug: string;
   date: string;
+  duration: string;
   tags: string[];
   body: string;
   socials: Socials[];

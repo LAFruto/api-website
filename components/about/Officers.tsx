@@ -7,7 +7,7 @@ import LinkedInIcon from "../icons/LinkedinIcon";
 
 const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER) => {
   return (
-    <div className="relative h-[500px] bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group">
+    <div className="relative h-[500px] bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group hide !delay-100">
       <Image
         src={image}
         alt={lastName}
@@ -16,18 +16,18 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
         sizes="100vw"
         className="h-full w-full relative object-cover !overflow-hidden"
       />
-      <div className="w-[90%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl space-y-2 ease-in-out duration-300 hover:bg-orange-90">
+      <div className="w-[90%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl space-y-2 ease-in-out duration-300 hover:bg-orange-90 hide !delay-300">
         <div className="flex justify-between w-full items-center">
-          <h4 className="bold-20  text-neutral-900">{`${firstName} ${lastName}`}</h4>
+          <h4 className="bold-18 text-neutral-900">{`${firstName} ${lastName}`}</h4>
           <div className="flex space-x-2">
             {socials &&
               socials.map((social, index) => {
                 const Icon = mapToIcon(social.type);
-                console.log(Icon);
                 return (
                   <div key={index} className="hover:-translate-y-1 ease-in-out transition">
-                    <Icon className={`h-5 w-5 fill-neutral-900`} />
-                    <a href={social.url} target="_blank" rel="noopener noreferrer"></a>
+                    <a href={social.url} target="_blank" rel="noopener noreferrer">
+                      <Icon className={`h-5 w-5 fill-neutral-900`} />
+                    </a>
                   </div>
                 );
               })}

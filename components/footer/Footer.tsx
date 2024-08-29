@@ -11,24 +11,27 @@ const Footer = () => {
             <ul className="flex space-x-4">
               {SOCIALS.map((social, index) => {
                 const Icon = social.icon;
-
                 return (
-                  <li key={index} className="hover:-translate-y-1 ease-in-out transition">
-                    <a href={social.link} target="_blank" rel="noopener noreferrer">
-                      <Icon className={`rounded-lg h-10 w-10 fill-neutral-900`} />
-                    </a>
-                  </li>
+                  <div key={index} className={`animate-fade`}>
+                    <li key={index} className={`hover:-translate-y-1 hover:ease-in-out transition`}>
+                      <a href={social.link} target="_blank" rel="noopener noreferrer">
+                        <Icon className={`rounded-lg h-10 w-10 fill-neutral-900`} />
+                      </a>
+                    </li>
+                  </div>
                 );
               })}
             </ul>
           </div>
         </div>
         <div className="mt-12">
-          <h2 className="bold-46 lg:bold-64 mt-5 capitalize">Be Proactive, Lead Boldy.</h2>
+          <h2 className="bold-46 lg:bold-64 mt-5 capitalize animate-fade !animation-delay-100">
+            Be Proactive, Lead Boldy.
+          </h2>
         </div>
-        <hr className="w-full mt-6 black-50 black-50 border-black-50 " />
-        <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6">
-          <p className="hover:underline ease-in-out transition duration-300 cursor-pointer">Privacy Notice</p>
+        <hr className="w-full mt-6 black-50 black-50 border-black-50 animate-fade" />
+        <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6 animate-fade !animation-delay-150">
+          <p className="hover:underline ease-in-out transition duration-200 cursor-pointer">Privacy Notice</p>
           <p>&copy; Association of Proactive Innovators 2024</p>
         </div>
       </div>

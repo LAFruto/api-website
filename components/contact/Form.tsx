@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useTransition } from "react";
+import { useState, useRef, useTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormValues {
   sendername: string;
@@ -17,12 +17,29 @@ interface FormValues {
 }
 
 const Form = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
+  });
+
   const [message, setMessage] = useState<string | null>(null);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const form = useRef<HTMLFormElement>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  // const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
     register,
@@ -33,13 +50,13 @@ const Form = () => {
 
   const onSubmit = async (data: FormValues) => {
     startTransition(async () => {
-      const token = recaptchaRef.current?.getValue();
+      // const token = recaptchaRef.current?.getValue();
 
-      if (!token) {
-        setMessage("Please complete the reCAPTCHA");
-        setStatus("error");
-        return;
-      }
+      // if (!token) {
+      //   setMessage("Please complete the reCAPTCHA");
+      //   setStatus("error");
+      //   return;
+      // }
 
       const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
       const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -57,7 +74,7 @@ const Form = () => {
           setMessage("Message sent successfully");
           setStatus("success");
           reset();
-          recaptchaRef.current?.reset();
+          // recaptchaRef.current?.reset();
         }
       } catch {
         setMessage("Failed to send message. Please try again later.");
@@ -70,15 +87,15 @@ const Form = () => {
     <section className="max-container padding-container my-24 lg:my-32">
       <div className="flex flex-col justify-between grid-cols-2 gap-8 lg:grid">
         <div className="flex flex-col justify-center">
-          <h1 className="bold-46 lg:bold-64">Get In Touch.</h1>
-          <p className="mt-6">
-            Reach out to us to find out more about our club or current workshop/competitions. We're here for you.
+          <h1 className="bold-46 lg:bold-64 hide !delay-200">Get In Touch.</h1>
+          <p className="mt-6 hide !delay-300">
+            Reach out to us to find out more about our club or current workshop/competitions. We&apos;re here for you.
           </p>
         </div>
 
         <form ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 items-stretch">
           <div className="flex flex-col gap-6 justify-between lg:flex-row">
-            <div className="flex-1">
+            <div className="flex-1 hide !delay-100">
               <label htmlFor="sendername">Full Name</label>
               <input
                 id="sendername"
@@ -89,7 +106,7 @@ const Form = () => {
               {errors.sendername && <span className="text-red-500">{errors.sendername.message}</span>}
             </div>
 
-            <div className="flex-1">
+            <div className="flex-1 hide !delay-200">
               <label htmlFor="senderemail">Email</label>
               <input
                 id="senderemail"
@@ -102,7 +119,7 @@ const Form = () => {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 hide !delay-300">
             <p>What are you interested in?</p>
             <div className="grid grid-cols-2 gap-x-10 gap-y-2 mt-4">
               <div className="flex items-center gap-4 ml-4">
@@ -155,7 +172,7 @@ const Form = () => {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 hide !delay-500">
             <label htmlFor="message">Message</label>
             <textarea
               id="message"
@@ -167,9 +184,14 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} />
+          {/* <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} /> */}
 
-          <Button type="submit" variant="btn-orange w-[40%]" title="Send Message" disabled={isPending} />
+          <Button
+            type="submit"
+            variant="btn-orange w-[40%] hide !delay-700"
+            title="Send Message"
+            disabled={isPending}
+          />
 
           {message && (
             <div

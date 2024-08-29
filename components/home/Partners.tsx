@@ -9,11 +9,12 @@ interface PartnerProps {
   logo: string;
   name: string;
   link: string;
+  className?: string;
 }
 
-const PartnerItem = ({ logo, name, link }: PartnerProps) => {
+const PartnerItem = ({ logo, name, link, className }: PartnerProps) => {
   return (
-    <section className="flex flex-col items-center">
+    <section className={`flex flex-col items-center ${className ?? ""}`}>
       <Link
         className="overflow-hidden transition duration-300 grayscale-[95%] hover:grayscale-0 hover:scale-110"
         href={link}
@@ -28,10 +29,16 @@ const PartnerItem = ({ logo, name, link }: PartnerProps) => {
 const Partners = () => {
   return (
     <section className="max-container padding-container flexCenter flex-col pb-16">
-      <h2 className="font-bold capitalize">TRUSTED BY DAVAO TECH ORGANIZATIONS</h2>
+      <h2 className="font-bold capitalize hide">TRUSTED BY DAVAO TECH ORGANIZATIONS</h2>
       <div className="flexCenter gap-4 lg:gap-12 mt-5">
-        {PARTNERS.map((partner) => (
-          <PartnerItem key={partner.name} logo={partner.logo} name={partner.name} link={partner.link} />
+        {PARTNERS.map((partner, index) => (
+          <PartnerItem
+            key={partner.name}
+            logo={partner.logo}
+            name={partner.name}
+            link={partner.link}
+            className={`hide !delay-${index * 100}`}
+          />
         ))}
       </div>
     </section>

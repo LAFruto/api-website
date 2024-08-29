@@ -76,15 +76,16 @@ const FAQ = () => {
 
       swiperRef.current.initialize();
     }
+    ("");
   }, []);
 
   return (
     <section className="max-container padding-container max-container padding-container py-12  text-neutral-900 lg:py-24 flex-col flex items-center">
-      <h1 className="bold-46 text-center pb-12 lg:bold-64">
+      <h1 className="bold-46 text-center pb-12 lg:bold-64 hide delay-200">
         Frequently Asked
         <br /> Questions
       </h1>
-      <div className=" w-[80%] rounded-xl flex-none !max-w-[56rem]">
+      <div className=" w-[80%] rounded-xl flex-none !max-w-[56rem] hide delay-300">
         <swiper-container init="false" ref={swiperRef}>
           {FAQs.map((FAQ, index) => (
             <swiper-slide key={index}>

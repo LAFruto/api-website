@@ -55,7 +55,7 @@ export const STATS = [
     number: "5",
   },
   {
-    title: "Students Taught",
+    title: "Students Engaged",
     number: "181",
   },
 ];
@@ -192,14 +192,32 @@ export const OFFICERS = [
     firstName: "Mc Curvin",
     lastName: "Royeras",
     position: "External Vice President",
-    socials: [],
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/mc-curvin-royeras-462a27251/",
+        type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/McCurvin",
+        type: "GITHUB",
+      },
+    ],
   },
   {
     image: "/images/officers/nodado.png",
     firstName: "Alfred Dads",
     lastName: "Nodado",
     position: "Secretary",
-    socials: [],
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/%20alfred-nodado-b24647251",
+        type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/Auguzcht",
+        type: "GITHUB",
+      },
+    ],
   },
   {
     image: "/images/officers/cabania.png",
@@ -246,8 +264,12 @@ export const OFFICERS = [
     position: "Research & Development Member",
     socials: [
       {
-        url: "https://www.linkedin.com/in/jaen-rafael-toyoda-06936b252/ ",
+        url: "https://www.linkedin.com/in/jaen-rafael-toyoda-06936b252/",
         type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/JRToyoda",
+        type: "GITHUB",
       },
     ],
   },
@@ -263,7 +285,16 @@ export const OFFICERS = [
     firstName: "Laurence",
     lastName: "Devera",
     position: "Research & Development Member",
-    socials: [],
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/laurence-kharl-devera-3242b9288/",
+        type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/Cogiii",
+        type: "GITHUB",
+      },
+    ],
   },
   {
     image: "/images/officers/comon.png",
@@ -364,7 +395,16 @@ export const OFFICERS = [
     firstName: "Keian",
     lastName: "Mar",
     position: "Technical Operations Member",
-    socials: [],
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/keianmar/",
+        type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/7kei",
+        type: "GITHUB",
+      },
+    ],
   },
   {
     image: "/images/officers/villadores.png",
@@ -383,12 +423,7 @@ export const OFFICERS = [
     firstName: "John Lawrence",
     lastName: "Alovera",
     position: "Pitching & Innovation Head",
-    socials: [
-      {
-        url: "https://www.linkedin.com/in/janrev-lance-villadores/",
-        type: "LINKEDIN",
-      },
-    ],
+    socials: [],
   },
   {
     image: "/images/officers/diaz.png",

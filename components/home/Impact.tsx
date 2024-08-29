@@ -29,11 +29,12 @@ declare global {
 interface StatProps {
   title: string;
   number: string;
+  className?: string;
 }
 
-const StatItem = ({ title, number }: StatProps) => {
+const StatItem = ({ title, number, className }: StatProps) => {
   return (
-    <div className="flexCenter flex-col text-white">
+    <div className={`flexCenter flex-col text-white ${className ?? ""}`}>
       <h1 className="bold-52">{number}</h1>
       <h5 className="bold-20">{title}</h5>
     </div>
@@ -54,7 +55,7 @@ const TestimonialItem = ({ image, name, position, quote }: TestimonialProps) => 
       <h6 className="text-bold uppercase">
         {name} / {position}
       </h6>
-      <p className="w-full lg:w-[50%] text-center">"{quote}"</p>
+      <p className="w-full lg:w-[50%] text-center">&quot;{quote}&quot;</p>
       <div className="mt-8"></div>
     </div>
   );
@@ -62,10 +63,7 @@ const TestimonialItem = ({ image, name, position, quote }: TestimonialProps) => 
 
 const Impact = () => {
   const swiperRef = useRef<any>(null);
-
   useEffect(() => {
-    register();
-
     const params = {
       loop: true,
       pagination: {
@@ -85,11 +83,11 @@ const Impact = () => {
     <section className="padding-container bg-blue-50 rounded-lg py-12 lg:py-16 flexCenter flex-col">
       <div className="max-container w-full flexCenter flex-col grid-cols-3 gap-12 lg:grid lg:gap-2">
         {STATS.map((stat, index) => (
-          <StatItem key={index} title={stat.title} number={stat.number} />
+          <StatItem key={index} title={stat.title} number={stat.number} className={`hide !delay-${index * 100}`} />
         ))}
       </div>
-      <hr className="max-container w-full lg:w-[70%] my-20" />
-      <div className="w-full max-container">
+      {/* <hr className="max-container w-full lg:w-[70%] my-20 hide delay-200" />
+      {/* <div className="w-full max-container  hide delay-300">
         <swiper-container
           init="false"
           pagination="true"
@@ -107,7 +105,7 @@ const Impact = () => {
             </swiper-slide>
           ))}
         </swiper-container>
-      </div>
+      </div> */}
     </section>
   );
 };
