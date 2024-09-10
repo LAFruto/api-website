@@ -18,7 +18,14 @@ const Navbar = () => {
     <div className="z-50 !fixed top-0 left-0 right-0 bottom-auto w-full min-h-28 items-center pl-[5%] pr-[5%] flex bg-black">
       <div className="max-w-[80rem] w-full h-full px-8 py-3.5 gap-8 flexBetween items-center bg-white m-auto relative shadow-xl rounded-2xl">
         <Link href="/">
-          <Image src="/images/text_logo2.png" alt="API Logo" width={100} height={100} className="inline-block" />
+          <Image
+            src="/images/text_logo2.png"
+            alt="API Logo"
+            width="80"
+            height="80"
+            className="w-full h-auto"
+            priority
+          />
         </Link>
 
         <nav className="h-full items-center static hidden lg:flex">

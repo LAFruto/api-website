@@ -41,7 +41,15 @@ const Hero = () => {
           </div>
         </div>
         <div className="block hide-x !delay-200">
-          <Image src="/images/hero.png" alt="hero" width={500} height={500} />
+          <Image
+            src="/images/hero.png"
+            alt="hero"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[90%] h-auto"
+            priority
+          />
         </div>
       </div>
     </section>

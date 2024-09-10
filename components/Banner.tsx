@@ -14,6 +14,7 @@ const Banner = ({ image, title }: BannerProps) => {
       height={0}
       sizes="100vw"
       className="w-full h-[500px] object-cover mt-[-1rem]"
+      priority
     />
   );
 };

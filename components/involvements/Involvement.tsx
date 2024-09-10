@@ -37,7 +37,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
   return (
     <>
       <div className="relative w-full h-[400px] rounded-b-3xl overflow-hidden">
-        <Image src={content.thumbnail} alt={content.title} fill style={{ objectFit: "cover" }} />
+        <Image src={content.thumbnail} alt={content.title} fill style={{ objectFit: "cover" }} priority />
         <div className="absolute inset-0 bg-blue-700 opacity-40 pointer-events-none" />
         <Link href="/involvements" className="z-1 bottom-0 absolute padding-container left-5 mb-10 hide !delay-100">
           <Button type="button" title="< All Involvements" variant="btn-orange" />

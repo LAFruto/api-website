@@ -19,8 +19,11 @@ const InvolvementItem = ({ content }: InvolvementItemProps) => {
         <Image
           src={content.thumbnail}
           alt={content.title}
-          fill
-          className="relative object-cover ease-in-out duration-300 group-hover:scale-[`1.1]  group-hover:brightness-90 group-hover:saturate-100 group-hover:sepia-30 group-hover:opacity-70 !overflow-hidden cursor-pointer"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-full h-full relative object-cover ease-in-out duration-300 group-hover:scale-[`1.1]  group-hover:brightness-90 group-hover:saturate-100 group-hover:sepia-30 group-hover:opacity-70 !overflow-hidden cursor-pointer"
+          priority
         />
         <div className="w-[80%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl gap-4 ease-in-out duration-300 hover:bg-orange-90 hide">
           <div className="flex gap-2">
