@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/public/images/open-graph.png",
+        url: "/images/open-graph.png",
         width: 1200,
         height: 630,
         alt: "API Mapúa-MCM image",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/public/images/logo.png",
+    icon: "/images/logo.png",
   },
 };
 
