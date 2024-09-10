@@ -1,80 +1,13 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import rehypeHighlight from "rehype-highlight";
-import { Markdown } from "@/components/ui/markdown";
+import PrivacyHeader from "@/components/PrivacyHeader";
+import PrivacyText from "@/components/PrivacyText";
 
-const PrivacyText = () => {
-  const body = `
-## 1. Introduction
-
-At **API Mapúa-MCM** ("we," "our," or "us"), a division of the Association of Proactive Innovators, we prioritize your privacy and are dedicated to protecting your personal and sensitive information. Our practices align with applicable data privacy laws and regulations, including the Philippine Data Privacy Act of 2012 and its Implementing Rules and Regulations. This Privacy Policy details how we gather, use, and protect your personal information.
-
-## 2. Changes to This Privacy Policy
-
-We may update this Privacy Policy from time to time to comply with legal requirements, reflect changes in our practices, or improve our data handling procedures. Any changes will be posted on our website and will become effective as soon as they are published.
-
-## 3. Information We Collect
-
-We may collect the following personal information from you:
-
-- **Contact Information:** Name, address, email address, and telephone or mobile numbers.
-- **Other Relevant Information:** Additional details necessary to provide our services, manage our activities, or respond to your inquiries.
-
-## 4. How We Collect Your Information
-
-Your personal information may be collected when you:
-
-- Interact with us through our website, social media platforms, or other communication channels.
-- Use our services or participate in our events.
-- Provide information directly through forms or other means.
-
-## 5. Use of Collected Information
-
-We use the personal information we collect for the following purposes:
-
-- **To Provide Services:** To carry out and deliver the services you request, manage your inquiries, and provide relevant support.
-- **Communication:** To contact you regarding your inquiries, provide updates, and send relevant information related to our club’s activities.
-- **Verification and Security:** To verify your identity, ensure the security of our platforms, and prevent unauthorized access.
-- **Compliance:** To comply with legal and regulatory requirements, including those mandated by the Philippine Data Privacy Act of 2012.
-
-## 6. Disclosure of Your Information
-
-We may share your personal information with selected partners and affiliates, strictly on a need-to-know basis and only for the purposes outlined in this policy. We do not sell your personal information to third parties. We may also disclose your information if required by law or to protect our rights, property, or safety.
-
-## 7. Data Security
-
-We implement appropriate physical, technical, and organizational measures to protect your personal information from unauthorized access, use, disclosure, or loss. Access to your personal information is limited to personnel who need the data to perform their job functions.
-
-## 8. Your Rights
-
-Under the Philippine Data Privacy Act of 2012, you have the following rights:
-
-- **Right to be Informed:** Know whether your personal data is being or has been processed.
-- **Right to Access:** Access your personal data, request details on how it is processed, and who has access to it.
-- **Right to Rectification:** Correct inaccuracies or errors in your personal data.
-- **Right to Erasure:** Request the deletion or removal of your personal data under certain conditions.
-- **Right to Object:** Object to the processing of your personal data, including for marketing purposes.
-- **Right to Data Portability:** Obtain a copy of your data in a structured, commonly used, and machine-readable format.
-
-## 9. Contact Us
-
-If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us at **api.mmcm@outlook.com**.
-` as string;
-
+const PrivacyPage = () => {
   return (
-    <div className="max-container px-[10%] lg:px-[16%] py-24">
-      <MDXRemote
-        source={body}
-        components={Markdown}
-        options={{
-          mdxOptions: {
-            remarkPlugins: [],
-            rehypePlugins: [[rehypeHighlight, {}]],
-            development: process.env.NODE_ENV === "development",
-          },
-        }}
-      />
-    </div>
+    <>
+      <PrivacyHeader />
+      <PrivacyText />
+    </>
   );
 };
 
-export default PrivacyText;
+export default PrivacyPage;

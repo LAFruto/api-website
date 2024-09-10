@@ -1,12 +1,9 @@
-"use client";
-
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
-import { useEffect, useState } from "react";
 import { Markdown } from "@/components/ui/markdown";
-import { serialize } from "next-mdx-remote/serialize";
 
-const privacyMarkdown = `
+const PrivacyText = () => {
+  const body = `
 ## 1. Introduction
 
 At **API Mapúa-MCM** ("we," "our," or "us"), a division of the Association of Proactive Innovators, we prioritize your privacy and are dedicated to protecting your personal and sensitive information. Our practices align with applicable data privacy laws and regulations, including the Philippine Data Privacy Act of 2012 and its Implementing Rules and Regulations. This Privacy Policy details how we gather, use, and protect your personal information.
@@ -61,30 +58,21 @@ Under the Philippine Data Privacy Act of 2012, you have the following rights:
 ## 9. Contact Us
 
 If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us at **api.mmcm@outlook.com**.
-`;
-
-const PrivacyText = () => {
-  const [source, setSource] = useState<MDXRemoteSerializeResult | null>(null);
-
-  useEffect(() => {
-    const serializeMarkdown = async () => {
-      const mdxSource = await serialize(privacyMarkdown, {
-        mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [[rehypeHighlight, {}]],
-          development: process.env.NODE_ENV === "development",
-        },
-      });
-
-      setSource(mdxSource);
-    };
-
-    serializeMarkdown();
-  }, []);
+` as string;
 
   return (
     <div className="max-container px-[10%] lg:px-[16%] py-24">
-      {source && <MDXRemote {...source} components={Markdown} />}
+      <MDXRemote
+        source={body}
+        components={Markdown}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [],
+            rehypePlugins: [[rehypeHighlight, {}]],
+            development: process.env.NODE_ENV === "development",
+          },
+        }}
+      />
     </div>
   );
 };
