@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Loading from "@/components/Loading";
@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         <Footer />
       </body>
+      <SpeedInsights />
     </html>
   );
 }
