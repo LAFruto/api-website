@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   category: "technology",
   openGraph: {
     title: "API Mapúa-MCM",
-    description: "API Mapúa-MCM - A tech-focused club in Mapúa-MCM",
+    description:
+      "A tech-focused club in Mapúa-MCM dedicated to nurturing student growth through workshops, competitions, and opportunities for hands-on learning and skill development.",
     url: "https://api-mmcm.org",
     siteName: "API Mapúa-MCM",
     locale: "en_US",

@@ -1,6 +1,7 @@
 "use client";
 
 import { SOCIALS } from "@/constants";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -29,7 +30,9 @@ const Footer = () => {
         </div>
         <hr className="w-full mt-6 black-50 black-50 border-black-50 hide !delay-300" />
         <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6 hide !delay-300">
-          <p className="hover:underline ease-in-out transition duration-200 cursor-pointer">Privacy Notice</p>
+          <Link href="/privacy">
+            <p className="hover:underline ease-in-out transition duration-200 cursor-pointer">Privacy Notice</p>
+          </Link>
           <p>&copy; Association of Proactive Innovators 2024</p>
         </div>
       </div>
