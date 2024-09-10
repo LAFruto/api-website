@@ -12,15 +12,18 @@ const Hero = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            entry.target.classList.add("show-x");
             observer.unobserve(entry.target);
           } else {
             entry.target.classList.remove("show");
+            entry.target.classList.remove("show-x");
           }
         });
       },
       { threshold: 0.5 }
     );
     document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".hide-x").forEach((el) => observer.observe(el));
   });
   return (
     <section className="max-container padding-container py-28">
@@ -37,7 +40,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <div className="block hide animation-delay-300 !delay-200">
+        <div className="block hide-x !delay-200">
           <Image src="/images/hero.png" alt="hero" width={500} height={500} />
         </div>
       </div>

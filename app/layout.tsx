@@ -16,6 +16,29 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "API Mapúa-MCM",
   description: "API Mapúa-MCM's Website",
+  authors: [{ name: "Association of Proactive Innovators" }],
+  creator: "Association of Proactive Innovators",
+  publisher: "Association of Proactive Innovators",
+  category: "technology",
+  openGraph: {
+    title: "API Mapúa-MCM",
+    description: "API Mapúa-MCM - A tech-focused club in Mapúa-MCM",
+    url: "https://api-mmcm.org",
+    siteName: "API Mapúa-MCM",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/public/images/open-graph.png",
+        width: 1200,
+        height: 630,
+        alt: "API Mapúa-MCM image",
+      },
+    ],
+  },
+  icons: {
+    icon: "/public/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -12,7 +12,7 @@ const Footer = () => {
               {SOCIALS.map((social, index) => {
                 const Icon = social.icon;
                 return (
-                  <div key={index} className={`animate-fade`}>
+                  <div key={index} className={`hide !delay-${index * 100}`}>
                     <li key={index} className={`hover:-translate-y-1 hover:ease-in-out transition`}>
                       <a href={social.link} target="_blank" rel="noopener noreferrer">
                         <Icon className={`rounded-lg h-10 w-10 fill-neutral-900`} />
@@ -25,12 +25,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12">
-          <h2 className="bold-46 lg:bold-64 mt-5 capitalize animate-fade !animation-delay-100">
-            Be Proactive, Lead Boldy.
-          </h2>
+          <h2 className="bold-46 lg:bold-64 mt-5 capitalize hide !delay-300">Be Proactive, Lead Boldy.</h2>
         </div>
-        <hr className="w-full mt-6 black-50 black-50 border-black-50 animate-fade" />
-        <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6 animate-fade !animation-delay-150">
+        <hr className="w-full mt-6 black-50 black-50 border-black-50 hide !delay-300" />
+        <div className="flex flex-col gap-4 lg:justify-between lg:flex-row mt-6 hide !delay-300">
           <p className="hover:underline ease-in-out transition duration-200 cursor-pointer">Privacy Notice</p>
           <p>&copy; Association of Proactive Innovators 2024</p>
         </div>

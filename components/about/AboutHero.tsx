@@ -12,15 +12,18 @@ const AboutHero = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            entry.target.classList.add("show-x");
             observer.unobserve(entry.target);
           } else {
             entry.target.classList.remove("show");
+            entry.target.classList.remove("show-x");
           }
         });
       },
       { threshold: 0.5 }
     );
     document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".hide-x").forEach((el) => observer.observe(el));
   });
   return (
     <div className="relative z-20 bg-blue-50 pt-32 rounded-bl-xl rounded-br-xl">
@@ -44,7 +47,7 @@ const AboutHero = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="flex min-w-[300px] w-[500px] h-full object-contain object-bottom hide !delay-500"
+            className="flex min-w-[300px] w-[500px] h-full object-contain object-bottom hide-x !delay-500"
           />
         </div>
       </div>

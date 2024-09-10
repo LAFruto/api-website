@@ -52,7 +52,7 @@ export const STATS = [
   },
   {
     title: "Competitions Placed",
-    number: "5",
+    number: "6",
   },
   {
     title: "Students Engaged",

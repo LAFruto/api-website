@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import plugin from "tailwindcss/plugin";
 
 module.exports = {
   content: [
@@ -72,21 +71,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    plugin(({ matchUtilities, theme }) => {
-      matchUtilities(
-        {
-          "animation-delay": (value) => {
-            return {
-              "animation-delay": value,
-            };
-          },
-        },
-        {
-          values: theme("transitionDelay"),
-        }
-      );
-    }),
-  ],
+  plugins: [require("@tailwindcss/forms")],
 };

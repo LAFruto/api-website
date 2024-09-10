@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Register = () => {
   return (
-    <section className="bg-blue-50 text-white rounded-lg">
+    <section className="bg-blue-50 text-white rounded-lg overflow-hidden">
       <div className="padding-container max-container flex justify-between items-center">
         <div className="py-12">
           <h1 className="bold-46 lg:bold-64 leading-[1.1] mb-6 lg:mb-12 hide delay-200">
