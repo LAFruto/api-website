@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { mapToIcon } from "@/lib/utils";
 import { OFFICER } from "@/constants";
-import LinkedInIcon from "../icons/LinkedinIcon";
 
 const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER) => {
   return (
@@ -41,9 +40,9 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
 
 const Officers = ({ officers }: { officers: OFFICER[] }) => {
   return (
-    <section className="flexCenter flex-col py-24 gap-8">
+    <section className="flexCenter flex-col py-24 gap-8 w-full h-full">
       <h2 className="bold-40 lg:bold-64 capitalize  text-neutral-900">Meet the Officers!</h2>
-      <div className="padding-container max-container justify-items-center gap-10 place-content-center md:grid lg:grid-cols-2 xl:grid-cols-3 flex flex-col">
+      <div className="padding-container max-container w-autoz h-full justify-items-center gap-10 place-content-center md:grid lg:grid-cols-2 xl:grid-cols-3 flex flex-col">
         {officers.map((officer, index) => (
           <OfficerItem
             key={index}
