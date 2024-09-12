@@ -6,7 +6,7 @@ const typographyVariants = cva("tracking-normal", {
   variants: {
     variant: {
       hero: "text-2xl leading-6 sm:text-4xl sm:leading-10 text-primary",
-      heading: "text-xl leading-7",
+      heading: "text-2xl leading-7",
       subheading: "text-base leading-7 text-primary",
       body: "text-base leading-6",
       "body-sm": "text-sm leading-6",
@@ -19,7 +19,7 @@ const typographyVariants = cva("tracking-normal", {
       light: "font-light",
     },
     color: {
-      primary: "!text-neutral-800",
+      primary: "text-blue-900",
       secondary: "text-neutral-800",
       accent: "text-neutral-800",
       hint: "text-neutral-800",

@@ -16,7 +16,7 @@ export const Markdown: MDXComponents = {
   },
   h1: ({ children, className, ...props }) => {
     return (
-      <Typography className={cn("pb-6", className)} variant="heading" weight="bold" color="primary" asChild>
+      <Typography className={cn("pb-6", className)} variant="hero" weight="bold" color="primary" asChild>
         <h2 {...props}>{children}</h2>
       </Typography>
     );

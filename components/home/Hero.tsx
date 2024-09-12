@@ -36,7 +36,7 @@ const Hero = () => {
           </p>
           <div className="mt-2 hide !delay-300">
             <Link href={"/contact"}>
-              <Button type="button" title="get started" variant="btn-orange" />
+              <Button type="button" title="get to know us" variant="btn-orange" />
             </Link>
           </div>
         </div>

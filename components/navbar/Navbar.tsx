@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,13 +9,37 @@ import { NAV_LINKS } from "@/constants";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
-  const handleNav = () => {
+  const handleMobileNav = () => {
     setNav(!nav);
   };
 
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos > prevScrollPos) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <div className="z-50 !fixed top-0 left-0 right-0 bottom-auto w-full min-h-28 items-center pl-[5%] pr-[5%] flex bg-black">
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 w-full min-h-28 flex items-center pl-[5%] pr-[5%] transition-transform duration-300 ease-in-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-[80rem] w-full h-full px-8 py-3.5 gap-8 flexBetween items-center bg-white m-auto relative shadow-xl rounded-2xl">
         <Link href="/">
           <Image
@@ -45,7 +69,7 @@ const Navbar = () => {
         </Link>
 
         {/* MOBILE NAVBAR */}
-        <div onClick={handleNav} className="block lg:hidden">
+        <div onClick={handleMobileNav} className="block lg:hidden">
           {nav ? (
             <svg
               className="w-10 h-10"
