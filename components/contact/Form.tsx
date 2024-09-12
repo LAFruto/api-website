@@ -37,10 +37,10 @@ const Form = () => {
 
   const [message, setMessage] = useState<string | null>(null);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
+  const [token, setToken] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const form = useRef<HTMLFormElement>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
     register,
@@ -51,8 +51,6 @@ const Form = () => {
 
   const onSubmit = async () => {
     startTransition(async () => {
-      const token = recaptchaRef.current?.getValue();
-
       if (!token) {
         setMessage("Please complete the reCAPTCHA");
         setStatus("error");
@@ -75,7 +73,7 @@ const Form = () => {
           setMessage("Message sent successfully");
           setStatus("success");
           reset();
-          recaptchaRef.current?.reset();
+          form.current?.reset();
         }
       } catch {
         setMessage("Failed to send message. Please try again later.");
@@ -186,6 +184,7 @@ const Form = () => {
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             options={{ action: "submit-form", theme: "light" }}
+            onSuccess={setToken}
           />
 
           <Button
