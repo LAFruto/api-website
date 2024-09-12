@@ -51,8 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
         </Suspense>
         <Footer />
+        <SpeedInsights />
       </body>
-      <SpeedInsights />
     </html>
   );
 }

@@ -9,12 +9,13 @@ import { NAV_LINKS } from "@/constants";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   const handleMobileNav = () => {
     setNav(!nav);
   };
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;

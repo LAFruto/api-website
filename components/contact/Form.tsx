@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Button from "../Button";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 interface FormValues {
   sendername: string;
@@ -83,8 +84,6 @@ const Form = () => {
     });
   };
 
-  const siteKey = process.env.NEXT_RECAPTCHA_SITE_KEY;
-
   return (
     <section className="max-container padding-container my-24 lg:my-32">
       <div className="flex flex-col justify-between grid-cols-2 gap-8 lg:grid">
@@ -120,7 +119,6 @@ const Form = () => {
               {errors.senderemail && <span className="text-red-500">{errors.senderemail.message}</span>}
             </div>
           </div>
-
           <div className="flex-1 hide !delay-300">
             <p>What are you interested in?</p>
             <div className="grid grid-cols-2 gap-x-10 gap-y-2 mt-4">
@@ -173,7 +171,6 @@ const Form = () => {
               </div>
             </div>
           </div>
-
           <div className="flex-1 hide !delay-500">
             <label htmlFor="message">Message</label>
             <textarea
@@ -186,7 +183,10 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} />
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            options={{ action: "submit-form", theme: "light" }}
+          />
 
           <Button
             type="submit"
@@ -194,7 +194,6 @@ const Form = () => {
             title="Send Message"
             disabled={isPending}
           />
-
           {message && (
             <div
               className={`flex w-full justify-center p-2 rounded-lg font-normal ${

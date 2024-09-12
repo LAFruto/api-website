@@ -7,10 +7,7 @@ const Contact = () => {
     <>
       <Form />
       <Location />
-      <Banner 
-        image={"/images/contact.jpg"}
-        title={"contact banner"}
-      />
+      <Banner image={"/images/contact.jpg"} title={"contact banner"} />
     </>
   );
 };
