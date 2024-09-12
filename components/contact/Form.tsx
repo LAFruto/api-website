@@ -4,7 +4,7 @@ import { useState, useRef, useTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import emailjs from "@emailjs/browser";
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormValues {
   sendername: string;
@@ -39,7 +39,7 @@ const Form = () => {
   const [isPending, startTransition] = useTransition();
 
   const form = useRef<HTMLFormElement>(null);
-  // const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
     register,
@@ -50,13 +50,13 @@ const Form = () => {
 
   const onSubmit = async (data: FormValues) => {
     startTransition(async () => {
-      // const token = recaptchaRef.current?.getValue();
+      const token = recaptchaRef.current?.getValue();
 
-      // if (!token) {
-      //   setMessage("Please complete the reCAPTCHA");
-      //   setStatus("error");
-      //   return;
-      // }
+      if (!token) {
+        setMessage("Please complete the reCAPTCHA");
+        setStatus("error");
+        return;
+      }
 
       const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
       const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -74,7 +74,7 @@ const Form = () => {
           setMessage("Message sent successfully");
           setStatus("success");
           reset();
-          // recaptchaRef.current?.reset();
+          recaptchaRef.current?.reset();
         }
       } catch {
         setMessage("Failed to send message. Please try again later.");
@@ -184,7 +184,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          {/* <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} /> */}
+          <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY!} />
 
           <Button
             type="submit"
