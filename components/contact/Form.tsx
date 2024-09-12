@@ -48,7 +48,7 @@ const Form = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async () => {
     startTransition(async () => {
       const token = recaptchaRef.current?.getValue();
 
@@ -82,6 +82,8 @@ const Form = () => {
       }
     });
   };
+
+  const siteKey = process.env.NEXT_RECAPTCHA_SITE_KEY;
 
   return (
     <section className="max-container padding-container my-24 lg:my-32">
@@ -184,7 +186,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_RECAPTCHA_SITE_KEY!} />
+          <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} />
 
           <Button
             type="submit"
