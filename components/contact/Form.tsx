@@ -183,7 +183,7 @@ const Form = () => {
 
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-            options={{ action: "submit-form", theme: "light" }}
+            options={{ theme: "light" }}
             onSuccess={setToken}
           />
 
