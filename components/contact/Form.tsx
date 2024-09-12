@@ -4,7 +4,6 @@ import { useState, useRef, useTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Turnstile } from "@marsidev/react-turnstile";
 
 interface FormValues {
@@ -37,7 +36,6 @@ const Form = () => {
 
   const [message, setMessage] = useState<string | null>(null);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
-  const [token, setToken] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const form = useRef<HTMLFormElement>(null);
@@ -51,6 +49,9 @@ const Form = () => {
 
   const onSubmit = async () => {
     startTransition(async () => {
+      const formData = new FormData(form.current!);
+      const token = formData.get("cf-turnstile-response");
+
       if (!token) {
         setMessage("Please complete the reCAPTCHA");
         setStatus("error");
@@ -181,11 +182,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <Turnstile
-            siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-            options={{ theme: "light" }}
-            onSuccess={setToken}
-          />
+          <Turnstile siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
 
           <Button
             type="submit"
