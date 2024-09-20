@@ -48,7 +48,7 @@ export const PARTNERS = [
 export const STATS = [
   {
     title: "Workshops Deployed",
-    number: "5",
+    number: "6",
   },
   {
     title: "Competitions Placed",
@@ -74,33 +74,6 @@ export const TESTIMONIALS = [
     position: "Advisor",
     quote:
       "This club offers a fantastic platform for students to delve deeper into technology while honing their skills through interactive workshops and exciting competitions. It's a valuable opportunity for hands-on learning and personal growth.",
-  },
-];
-
-export const RECENTS = [
-  {
-    image: "/images/involvement_bigpp.jpg",
-    title: "Breaking into Greatness Programming with Python",
-    tags: ["February 2024", "Workshop"],
-    url: "breaking-into-greatness-programming-with-python",
-  },
-  {
-    image: "/images/involvement_teambuilding.png",
-    title: "API's First Team-Building",
-    tags: ["November 2023"],
-    url: "apis-first-team-building",
-  },
-  {
-    image: "/images/involvement_pjdsc.png",
-    title: "BPI's Philippine Junior Data Science Competition",
-    tags: ["November 2023", "Competition"],
-    url: "bpis-philippine-junior-data-science-competition",
-  },
-  {
-    image: "/images/involvement_zerotohero.png",
-    title: "From Zero to Hero: Introduction to Java",
-    tags: ["September 2023"],
-    url: "from-zero-to-hero",
   },
 ];
 
@@ -155,7 +128,17 @@ export const TIMELINES = [
   {
     image: "/images/timeline/february2024.png",
     date: new Date("2024-02-01"),
-    description: "API holds its second workshop (Python: Breaking Into Greatness)",
+    description: "API holds its a multi-workshop (Python: Breaking Into Greatness)",
+  },
+  {
+    image: "/images/timeline/august2024.jpg",
+    date: new Date("2024-08-01"),
+    description: "Re-election of officers for API's second year",
+  },
+  {
+    image: "/images/timeline/september2024.jpg",
+    date: new Date("2024-09-14"),
+    description: "API holds its third workshop (C++ Lab)",
   },
 ];
 
@@ -224,7 +207,16 @@ export const OFFICERS = [
     firstName: "Anikka",
     lastName: "Cabania",
     position: "Treasurer",
-    socials: [],
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/nikka-cabania/",
+        type: "LINKEDIN",
+      },
+      {
+        url: "https://github.com/scorkie",
+        type: "GITHUB",
+      },
+    ],
   },
   {
     image: "/images/officers/acquiat.png",
@@ -433,138 +425,3 @@ export const OFFICERS = [
     socials: [],
   },
 ];
-
-// const INVOLVEMENTS = [
-//   {
-//     title: "WordPress Davao Meetup #23",
-//     image: "/images/involvements/thumbnail/wordpress.jpg",
-//     tags: [Tag.WORKSHOP],
-//     url: "wordpress-davao-meetup",
-//     markdown: "wordpress",
-//     date: new Date("2024-04-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-//   {
-//     title: "MCITS & IT Olympiad 2024",
-//     image: "/images/involvements/thumbnail/mcits2024.jpg",
-//     tags: [.COMPETITIOTagN],
-//     url: "mcits-2024",
-//     markdown: "mcits2024",
-//     date: new Date("2024-02-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-//   {
-//     title: "Breaking into Greatness Programming with Python",
-//     image: "/images/involvements/thumbnail/bigpp.png",
-//     tags: [],
-//     url: "breaking-into-greatness-programming-with-python",
-//     markdown: "bigpp",
-//     date: new Date("2024-02-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-//   {
-//     image: "/images/involvements/thumbnail/teambuilding.png",
-//     title: "API's First Team-Building",
-//     tags: [],
-//     url: "apis-first-team-building",
-//     markdown: "teambuilding",
-//     date: new Date("2023-11-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-//   {
-//     image: "/images/involvements/thumbnail/pjdsc.png",
-//     title: "BPI's Philippine Junior Data Science Competition",
-//     tags: [Tag.COMPETITION],
-//     url: "bpis-philippine-junior-data-science-competition",
-//     markdown: "pjdsc",
-//     date: new Date("2023-11-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-//   {
-//     image: "/images/involvements/thumbnail/zerotohero.png",
-//     title: "From Zero to Hero: Introduction to Java",
-//     tags: [Tag.WORKSHOP],
-//     url: "from-zero-to-hero",
-//     markdown: "zerotohero",
-//     date: new Date("2023-09-01"),
-//     socials: [
-//       {
-//         url: "https://www.facebook.com",
-//         type: "FACEBOOK",
-//       },
-//       {
-//         url: "https://www.instagram.com",
-//         type: "INSTAGRAM",
-//       },
-//       {
-//         url: "https://www.facebook.com",
-//         type: "LINKEDIN",
-//       },
-//     ],
-//   },
-// ];
