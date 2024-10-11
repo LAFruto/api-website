@@ -16,7 +16,7 @@ export default async function Home() {
       <Hero />
       <Partners />
       <Impact />
-      <Upcoming />
+      {/* <Upcoming /> */}
       <Promotional />
       <Recents involvements={involvements} />
       <FAQ />
