@@ -48,7 +48,7 @@ export const PARTNERS = [
 export const STATS = [
   {
     title: "Workshops Deployed",
-    number: "6",
+    number: "8",
   },
   {
     title: "Competitions Placed",
@@ -56,7 +56,7 @@ export const STATS = [
   },
   {
     title: "Students Engaged",
-    number: "181",
+    number: "320",
   },
 ];
 
@@ -139,6 +139,11 @@ export const TIMELINES = [
     image: "/images/timeline/september2024.jpg",
     date: new Date("2024-09-14"),
     description: "API holds its third workshop (C++ Lab)",
+  },
+  {
+    image: "/images/timeline/september2024.jpg",
+    date: new Date("2024-10-07"),
+    description: "Hack the System (Cybersecurity Seminar)",
   },
 ];
 
