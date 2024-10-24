@@ -141,7 +141,7 @@ export const TIMELINES = [
     description: "API holds its third workshop (C++ Lab)",
   },
   {
-    image: "/images/timeline/september2024.jpg",
+    image: "/images/timeline/october2024.jpg",
     date: new Date("2024-10-07"),
     description: "Hack the System (Cybersecurity Seminar)",
   },
