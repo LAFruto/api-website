@@ -90,7 +90,7 @@ const Recents = ({ involvements }: { involvements: Content[] }) => {
             </SwiperSlide>
           ))}
           <div className="mt-12">
-            <SwiperButtons swiper={swiperRef.current} />
+            <SwiperButtons />
           </div>
         </Swiper>
       </div>

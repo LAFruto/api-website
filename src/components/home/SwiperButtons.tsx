@@ -1,17 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSwiper } from "swiper/react";
 
-interface SwiperButtonsProps {
-  swiper: any;
-}
+const SwiperButtons = () => {
+  const swiper = useSwiper();
 
-const SwiperButtons: React.FC<SwiperButtonsProps> = ({ swiper }) => {
-  const [isBeginning, setIsBeginning] = React.useState(true);
-  const [isEnd, setIsEnd] = React.useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (swiper) {
       swiper.on("slideChange", () => {
         setIsBeginning(swiper.isBeginning);
