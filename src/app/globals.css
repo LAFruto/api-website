@@ -18,6 +18,7 @@ main {
 
 
 @layer utilities {
+  /* layout */
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
@@ -26,52 +27,20 @@ main {
     @apply px-[5%]
   }
 
-  .hide {
-    @apply opacity-0 translate-y-5;
-    transition: opacity 0.75s ease, transform 1s ease;
-  }
-  
-  
-  .show {
-    @apply opacity-100 translate-y-0;
-  }
-
-  .hide-x {
-    @apply opacity-0 translate-x-5;
-    transition: opacity 0.75s ease, transform 1s ease;
-  }
-
-  .show-x {
-    @apply opacity-100 translate-x-0;
-  }
-
-
-  /* FLEX */
   .flexCenter {
     @apply flex items-center justify-center;
   }
 
-  .flexBetween {
-    @apply flex items-center justify-between;
-  }
-
-  .flexStart {
-    @apply flex items-center justify-start;
-  }
-
-  .flexEnd {
-    @apply flex items-center justify-end;
-  }
-
-  /* BUTTONS */
+  /* buttons */
   .btn-orange {
-    @apply border-none text-white py-2 px-6 bold-16 rounded-full bg-orange-50 hover:bg-orange-90 transition duration-500 ease-in-out;
+    @apply border-none text-white py-2 px-6 font-semibold rounded-full bg-orange-50 hover:bg-orange-90 transition duration-500 ease-in-out;
   }
     
   .btn-blue {
-    @apply  border-none text-white py-2 px-6 bold-16 rounded-full bg-blue-50 hover:bg-blue-90 transition duration-500 ease-in-out;
+    @apply  border-none text-white py-2 px-6 font-semibold rounded-full bg-blue-50 hover:bg-blue-90 transition duration-500 ease-in-out;
   }
 
+  /* typography */
   .bold-124 {
     @apply text-[124px] font-[800] leading-[120%];
   }
@@ -111,4 +80,25 @@ main {
   .bold-16 {
     @apply text-[16px] font-[800];
   }
+
+
+  /* animation observer */
+  .hide {
+    @apply opacity-0 translate-y-5;
+    transition: opacity 0.75s ease, transform 1s ease;
+  }
+  
+  .show {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .hide-x {
+    @apply opacity-0 translate-x-5;
+    transition: opacity 0.75s ease, transform 1s ease;
+  }
+
+  .show-x {
+    @apply opacity-100 translate-x-0;
+  }
+
 }

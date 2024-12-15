@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: "/favicon.ico",
   },
 };
 
