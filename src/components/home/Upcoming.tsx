@@ -1,4 +1,3 @@
-import AnimatedArrow from "../AnimatedArrow";
 import Image from "next/image";
 
 const Upcoming = () => {

@@ -1,9 +1,6 @@
-"use client";
-
 import { PARTNERS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 interface PartnerProps {
   logo: string;
