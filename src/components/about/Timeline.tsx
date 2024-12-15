@@ -1,6 +1,5 @@
 "use client";
 
-import { TIMELINE } from "@/constants";
 import Image from "next/image";
 
 interface ActivityProps {
@@ -9,6 +8,12 @@ interface ActivityProps {
   description: string;
   index: number;
 }
+
+export type Timeline = {
+  image: string;
+  date: Date;
+  description: string;
+};
 
 const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
   return (
@@ -34,7 +39,7 @@ const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
 };
 ``;
 
-const TimelineList = ({ timeline }: { timeline: TIMELINE[] }) => {
+const TimelineList = ({ timeline }: { timeline: Timeline[] }) => {
   const displayedYears = new Set<string>();
   return (
     <section className="max-container padding-container flexCenter flex-col py-24">

@@ -1,10 +1,18 @@
 "use client";
 
-import Image from "next/image";
+import { Socials } from "@/data";
 import { mapToIcon } from "@/lib/utils";
-import { OFFICER } from "@/constants";
+import Image from "next/image";
 
-const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER) => {
+export type Officer = {
+  image: string;
+  firstName: string;
+  lastName: string;
+  position: string;
+  socials: Socials[];
+};
+
+const OfficerItem = ({ firstName, lastName, position, image, socials }: Officer) => {
   return (
     <div className="relative h-[500px] bg-orange-50 overflow-hidden cursor-pointer rounded-[1rem] group hide !delay-100">
       <Image
@@ -38,7 +46,7 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: OFFICER)
   );
 };
 
-const Officers = ({ officers }: { officers: OFFICER[] }) => {
+const Officers = ({ officers }: { officers: Officer[] }) => {
   return (
     <section className="flexCenter flex-col py-24 gap-8 w-full h-full">
       <h2 className="bold-40 lg:bold-64 capitalize  text-neutral-900">Meet the Officers!</h2>

@@ -1,7 +1,6 @@
 import FacebookIcon from "@/components/icons/FacebookIcon";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import LinkedInIcon from "@/components/icons/LinkedinIcon";
-import { Socials } from "@/data";
 
 export const NAV_LINKS = [
   { href: "/", key: "home", label: "HOME" },
@@ -98,12 +97,6 @@ export const FAQs = [
   },
 ];
 
-export type TIMELINE = {
-  image: string;
-  date: Date;
-  description: string;
-};
-
 export const TIMELINES = [
   {
     image: "/images/timeline/july2023.png",
@@ -146,14 +139,6 @@ export const TIMELINES = [
     description: "Hack the System (Cybersecurity Seminar)",
   },
 ];
-
-export type OFFICER = {
-  image: string;
-  firstName: string;
-  lastName: string;
-  position: string;
-  socials: Socials[];
-};
 
 export const OFFICERS = [
   {

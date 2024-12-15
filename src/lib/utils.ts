@@ -10,16 +10,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDateToCustomString(date: Date): string {
-  const options: Intl.DateTimeFormatOptions = {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  };
-
-  return date.toLocaleDateString("en-GB", options);
-}
-
 export function mapToIcon(type: any): any {
   switch (type) {
     case "FACEBOOK":
