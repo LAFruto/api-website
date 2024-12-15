@@ -1,9 +1,9 @@
 "use client";
 
+import { Content } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedArrow from "../AnimatedArrow";
-import { Content } from "@/data";
 
 interface InvolvementItemProps {
   content: Content;

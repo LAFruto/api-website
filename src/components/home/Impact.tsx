@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { register } from "swiper/element/bundle";
 
-import { STATS, TESTIMONIALS } from "@/constants";
+import { STATS } from "@/constants";
 
 register();
 

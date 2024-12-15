@@ -1,14 +1,11 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import "./globals.css";
-import { Poppins } from "next/font/google";
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Loading from "@/components/Loading";
+import Navbar from "@/components/navbar/Navbar";
 import { cn } from "@/lib/utils";
-
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { Suspense } from "react";
+import "./globals.css";
 
 const inter = Poppins({
   weight: ["400", "500", "600", "700", "800"],
@@ -53,8 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
         </Suspense>
         <Footer />
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );

@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import Button from "../Button";
 import { Content } from "@/data";
 import { mapToIcon } from "@/lib/utils";
-import LinkIcon from "../icons/LinkIcon";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
+import Button from "../Button";
+import LinkIcon from "../icons/LinkIcon";
 
 const InvolvementPost = ({ content }: { content: Content }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
     document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
   });
 
-  const copyToClipboard = (e: any) => {
+  const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.toString());
   };
 
@@ -68,7 +68,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
                 content.socials.map((social, index) => {
                   const Icon = mapToIcon(social.type);
                   return (
-                    <a
+                    <Link
                       key={index}
                       href={social.url}
                       target="_blank"
@@ -77,7 +77,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
                       className="flex p-3 rounded-full bg-orange-50 border-blue-50 border mr-[-.5rem] hover:bg-orange-90 transition"
                     >
                       <Icon className={`h-5 w-5 fill-white`} />
-                    </a>
+                    </Link>
                   );
                 })}
             </div>
