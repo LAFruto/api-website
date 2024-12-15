@@ -58,7 +58,7 @@ const Recents = ({ involvements }: { involvements: Content[] }) => {
     <section className="bg-orange-50 rounded-lg py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 py-4 lg:py-12 lg:pb-16">
         <div className="px-0 xl:px-20 flex flex-col lg:grid grid-cols-2 gap-4">
-          <h1 className="tex-4xl lg:text-5xl xl:text-6xl font-bold col-span-1">Our recent milestones</h1>
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold col-span-1">Our recent milestones</h1>
           <div className="flex flex-col justify-between items-start gap-8">
             <p>
               Explore our latest triumphs and accolades as we push innovation boundaries. From winning competitions to

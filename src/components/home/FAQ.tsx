@@ -16,8 +16,8 @@ interface FAQProps {
 
 const FAQItem = ({ index, question, answer, image }: FAQProps & { index: number }) => {
   return (
-    <div className="h-[32rem] md:h-[24rem] rounded-xl flex flex-col bg-orange-50 hover:bg-orange-90 transition-colors duration-300 ease-in-out md:flex-row">
-      <div className="relative bg-blue-50 w-full h-[80px] sm:h-full md:w-1/2 rounded-xl overflow-hidden">
+    <div className="h-[32rem] md:h-[24rem]  rounded-xl flex flex-col bg-orange-50 hover:bg-orange-90 transition-colors duration-300 ease-in-out md:flex-row">
+      <div className="relative bg-blue-50 w-full h-[80px] sm:h-full  md:w-1/2 rounded-xl overflow-hidden">
         <Image
           src={image}
           alt="FAQ illustration"
@@ -45,7 +45,7 @@ const FAQItem = ({ index, question, answer, image }: FAQProps & { index: number 
 
 const FAQ = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12 lg:py-24 text-neutral-900 flex flex-col items-center">
+    <section className="max-w-7xl max-container mx-auto px-4 py-12 lg:py-24 text-neutral-900 flex flex-col items-center">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
         Frequently Asked
         <br /> Questions
