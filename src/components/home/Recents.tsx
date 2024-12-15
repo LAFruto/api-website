@@ -82,7 +82,7 @@ const Recents = ({ involvements }: { involvements: Content[] }) => {
             disableOnInteraction: false,
           }}
           modules={[Autoplay, Navigation]}
-          className="w-full h-full !overflow-visible  lg:!-mx-20"
+          className="w-full h-full !overflow-visible lg:!-mx-20"
         >
           {involvements.slice(0, 4).map((recent, index) => (
             <SwiperSlide key={index}>

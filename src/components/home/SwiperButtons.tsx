@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -18,10 +20,8 @@ const SwiperButtons: React.FC<SwiperButtonsProps> = ({ swiper }) => {
     }
   }, [swiper]);
 
-  if (!swiper) return null;
-
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 hide !delay-200">
       <button
         onClick={() => swiper.slidePrev()}
         className={cn(
