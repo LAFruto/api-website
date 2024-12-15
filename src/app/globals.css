@@ -100,5 +100,4 @@ main {
   .show-x {
     @apply opacity-100 translate-x-0;
   }
-
 }
