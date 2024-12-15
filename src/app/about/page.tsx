@@ -1,9 +1,9 @@
-import AboutHero from "../../components/about/AboutHero";
 import Officers from "@/components/about/Officers";
-import Timeline from "@/components/about/Timeline";
 import Statements from "@/components/about/Statements";
+import Timeline from "@/components/about/Timeline";
 import Register from "@/components/Register";
 import { OFFICERS, TIMELINES } from "@/constants";
+import AboutHero from "../../components/about/AboutHero";
 
 const About = async () => {
   return (

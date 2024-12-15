@@ -17,23 +17,6 @@ interface FormValues {
 }
 
 const Form = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          } else {
-            entry.target.classList.remove("show");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
-  });
-
   const [message, setMessage] = useState<string | null>(null);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -178,7 +161,7 @@ const Form = () => {
               placeholder="Type your message..."
               className="w-full min-h-[150px] block mt-2 bg-zinc-200 border-zinc-200 rounded-xl py-2 px-4 text-sm font-semibold transition ease-in-out hover:bg-orange-200 hover:border-orange-200 border-[3px] focus:!border-white !outline-none focus:ring-orange-50 focus:ring-2"
               disabled={isPending}
-            ></textarea>
+            />
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 

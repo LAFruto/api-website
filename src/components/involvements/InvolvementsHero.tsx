@@ -6,25 +6,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 const InvolvementsHero = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            entry.target.classList.add("show-x");
-            observer.unobserve(entry.target);
-          } else {
-            entry.target.classList.remove("show");
-            entry.target.classList.remove("show-x");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
-    document.querySelectorAll(".hide-x").forEach((el) => observer.observe(el));
-  });
   return (
     <section className="relative z-20 bg-blue-50 pt-32 rounded-bl-xl rounded-br-xl">
       <div className="max-container padding-container flex flex-col-reverse gap-4 grid-cols-2 lg:grid">

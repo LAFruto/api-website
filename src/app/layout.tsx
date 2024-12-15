@@ -1,10 +1,8 @@
 import Footer from "@/components/footer/Footer";
-import Loading from "@/components/Loading";
 import Navbar from "@/components/navbar/Navbar";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { Suspense } from "react";
 import "./globals.css";
 
 const inter = Poppins({
@@ -46,9 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={cn("bg-beige-50  text-neutral-900", inter.className)}>
         <Navbar />
-        <Suspense fallback={<Loading />}>
-          <main>{children}</main>
-        </Suspense>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

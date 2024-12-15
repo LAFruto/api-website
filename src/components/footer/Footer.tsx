@@ -1,9 +1,19 @@
 "use client";
 
 import { SOCIALS } from "@/constants";
+import { useObserver } from "@/hooks/useObserver";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Footer = () => {
+  // Placed observer in footer as it appears on every page
+  const { observe } = useObserver();
+
+  useEffect(() => {
+    const cleanup = observe([".hide", ".hide-x"]);
+    return cleanup;
+  }, [observe]);
+
   return (
     <footer className="relative z-40 rounded-tl-lg rounded-tr-lg mt-[-15px]  py-12 lg:py-16 bg-orange-50 text-neutral-900">
       <div className="padding-container max-container w-full flex flex-col justify-between">

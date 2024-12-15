@@ -4,28 +4,10 @@ import { Content } from "@/data";
 import { mapToIcon } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import Button from "../Button";
 import LinkIcon from "../icons/LinkIcon";
 
 const InvolvementPost = ({ content }: { content: Content }) => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          } else {
-            entry.target.classList.remove("show");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    document.querySelectorAll(".hide").forEach((el) => observer.observe(el));
-  });
-
   const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.toString());
   };
