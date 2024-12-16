@@ -36,14 +36,31 @@ const Form = () => {
       const token = formData.get("cf-turnstile-response");
 
       if (!token) {
-        setMessage("Please complete the reCAPTCHA");
+        setMessage("Please complete the Turnstile challenge");
         setStatus("error");
         return;
       }
 
-      const serviceId = process.env.SERVICE_ID;
-      const templateId = process.env.TEMPLATE_ID;
-      const publicKey = process.env.KEY;
+      // Verify Turnstile token
+      const verifyRes = await fetch("/api/verify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+
+      const verifyData = await verifyRes.json();
+
+      if (!verifyData.success) {
+        setMessage("Turnstile verification failed. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
         setMessage("Configuration error. Please try again later.");
@@ -52,7 +69,7 @@ const Form = () => {
       }
 
       try {
-        const res = await emailjs.sendForm(serviceId, templateId, form.current!, { publicKey });
+        const res = await emailjs.sendForm(serviceId, templateId, form.current!, publicKey);
         if (res.status === 200) {
           setMessage("Message sent successfully");
           setStatus("success");
@@ -165,7 +182,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <Turnstile siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
+          <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} options={{ theme: "light" }} />
 
           <Button
             type="submit"
