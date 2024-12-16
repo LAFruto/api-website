@@ -22,7 +22,7 @@ export function MobileNav() {
           isOpen ? "top-20 py-8 h-[280px]" : "top-20 h-0 px-8 py-0 overflow-hidden"
         )}
       >
-        <NavLinks mobile onClick={toggleNav} />
+        <NavLinks mobile />
         <Link href="/contact" className="btn-orange text-center block mt-4" onClick={toggleNav}>
           contact us
         </Link>

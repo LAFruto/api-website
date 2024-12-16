@@ -10,9 +10,8 @@ const Banner = ({ image, title }: BannerProps) => {
     <Image
       src={image}
       alt={title}
-      width={0}
-      height={0}
-      sizes="100vw"
+      width={1200}
+      height={1200}
       className="w-full h-[500px] object-cover mt-[-1rem]"
       priority
     />

@@ -21,7 +21,7 @@ const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
       <div
         className={`${
           index % 2 === 0 ? "lg:order-3" : "lg:order-1 "
-        }  flexCenter w-[350px] h-[350px] overflow-hidden rounded-full hide !delay-500`}
+        }  flexCenter w-[350px] h-[350px] overflow-hidden rounded-full hide !delay-300`}
       >
         <Image src={image} alt="image" width={1000} height={1000} className="w-full h-full object-cover" />
       </div>
@@ -29,7 +29,7 @@ const TimelineItem = ({ image, month, description, index }: ActivityProps) => {
       <div
         className={`${
           index % 2 === 0 ? "lg:order-1 lg:text-right" : "lg:order-3 lg:text-left"
-        } flex flex-col gap-2 justify-center text-center mb-4 p-6 lg:mb-0 hide !delay-200`}
+        } flex flex-col gap-2 justify-center text-center mb-4 p-6 lg:mb-0 hide !delay-100`}
       >
         <h4 className="bold-20 mt-5 capitalize  text-neutral-900">{month}</h4>
         <p className=" text-neutral-900">{description}</p>

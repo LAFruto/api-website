@@ -5,10 +5,9 @@ import { NAV_LINKS } from "@/constants";
 
 interface NavLinksProps {
   mobile?: boolean;
-  onClick?: () => void;
 }
 
-export const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
+export const NavLinks = ({ mobile }: NavLinksProps) => {
   return (
     <ul className={`flex ${mobile ? "flex-col h-[160px] justify-between" : "h-full gap-4"}`}>
       {NAV_LINKS.map((link) => (
@@ -16,7 +15,6 @@ export const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
           <Link
             href={link.href}
             className={`font-bold ${mobile ? "text-md" : "text-black-90"} flexCenter cursor-pointer`}
-            onClick={onClick}
           >
             {link.label}
           </Link>

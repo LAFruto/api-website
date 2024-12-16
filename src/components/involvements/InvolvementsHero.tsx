@@ -28,6 +28,7 @@ const InvolvementsHero = () => {
             height={0}
             sizes="100vw"
             className="flex min-w-[300px] w-[450px] h-full object-contain object-bottom hide-x !delay-300"
+            priority
           />
         </div>
       </div>

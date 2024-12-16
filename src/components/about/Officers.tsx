@@ -23,7 +23,7 @@ const OfficerItem = ({ firstName, lastName, position, image, socials }: Officer)
         sizes="100vw"
         className="h-full w-full relative object-cover !overflow-hidden"
       />
-      <div className="w-[90%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl space-y-2 ease-in-out duration-300 hover:bg-orange-90 hide !delay-300">
+      <div className="w-[90%] max-w-[36.5625rem] bg-orange-50 cursor-pointer flex-col items-start p-[1.875rem] flex absolute top-auto bottom-[7%] left-[5%] right-auto rounded-xl space-y-2 ease-in-out duration-300 hover:bg-orange-90 hide !delay-200">
         <div className="flex justify-between w-full items-center">
           <h4 className="bold-18 text-neutral-900">{`${firstName} ${lastName}`}</h4>
           <div className="flex space-x-2">

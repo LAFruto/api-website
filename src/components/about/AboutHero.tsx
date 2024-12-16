@@ -28,6 +28,7 @@ const AboutHero = () => {
             height={0}
             sizes="100vw"
             className="flex min-w-[300px] w-[500px] h-full object-contain object-bottom hide-x !delay-500"
+            priority
           />
         </div>
       </div>
