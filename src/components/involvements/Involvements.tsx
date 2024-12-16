@@ -1,5 +1,3 @@
-"use client";
-
 import { Content } from "@/data";
 import Image from "next/image";
 import Link from "next/link";

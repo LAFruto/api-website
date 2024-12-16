@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import Button from "../Button";
-import { useEffect } from "react";
 import Link from "next/link";
+import Button from "../Button";
 
 const InvolvementsHero = () => {
   return (

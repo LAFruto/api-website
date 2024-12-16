@@ -1,6 +1,8 @@
-import Involvement from "@/components/involvements/Involvement";
 import Article from "@/components/involvements/Article";
+import Involvement from "@/components/involvements/Involvement";
 import { getAllContent, getContentEntry } from "@/data";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 export const generateStaticParams = async () => {
   const content = await getAllContent();
@@ -10,10 +12,15 @@ export const generateStaticParams = async () => {
 
 export default async function ContentPage({ params }: { params: { slug: string } }) {
   const content = await getContentEntry(params.slug);
+
+  if (!content) {
+    return notFound();
+  }
+
   return (
-    <div>
+    <Suspense fallback={<div className="flex h-full w-full items-center justify-center">Loading...</div>}>
       <Involvement content={content} />
       <Article body={content.body} />
-    </div>
+    </Suspense>
   );
 }

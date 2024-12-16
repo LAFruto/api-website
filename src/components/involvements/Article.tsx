@@ -1,6 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import { Markdown } from "../ui/markdown";
+import { memo } from "react";
 
 const Article = ({ body }: { body: string }) => {
   return (

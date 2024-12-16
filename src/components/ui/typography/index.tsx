@@ -67,7 +67,6 @@ const typographyVariants = cva("tracking-normal", {
     variant: "body",
     color: "primary",
     weight: "normal",
-    // prose: true,
     italic: false,
     inverse: false,
   },
