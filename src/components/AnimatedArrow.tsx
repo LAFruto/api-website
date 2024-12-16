@@ -1,5 +1,3 @@
-"use client";
-
 const AnimatedArrow = () => {
   return (
     <div className="w-[1.9rem] col-y-[0.2rem] flex-none px-[0.2rem] flex overflow-hidden">

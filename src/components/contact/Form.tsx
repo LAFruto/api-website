@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useTransition, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import Button from "../Button";
 import emailjs from "@emailjs/browser";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { useRef, useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
+import Button from "../Button";
 
 interface FormValues {
   sendername: string;
@@ -41,9 +41,9 @@ const Form = () => {
         return;
       }
 
-      const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_KEY;
+      const serviceId = process.env.SERVICE_ID;
+      const templateId = process.env.TEMPLATE_ID;
+      const publicKey = process.env.KEY;
 
       if (!serviceId || !templateId || !publicKey) {
         setMessage("Configuration error. Please try again later.");
@@ -165,7 +165,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <Turnstile siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
+          <Turnstile siteKey={process.env.RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
 
           <Button
             type="submit"
