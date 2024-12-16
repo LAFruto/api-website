@@ -42,7 +42,7 @@ const Form = () => {
       }
 
       // Verify Turnstile token
-      const verifyRes = await fetch("/api/verify", {
+      const verifyRes = await fetch("/contact/api/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
