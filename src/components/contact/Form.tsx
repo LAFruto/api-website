@@ -32,53 +32,59 @@ const Form = () => {
 
   const onSubmit = async () => {
     startTransition(async () => {
-      const formData = new FormData(form.current!);
-      const token = formData.get("cf-turnstile-response");
-
-      if (!token) {
-        setMessage("Please complete the Turnstile challenge");
-        setStatus("error");
-        return;
-      }
-
-      // Verify Turnstile token
-      const verifyRes = await fetch("/contact/api/verify", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token }),
-      });
-
-      const verifyData = await verifyRes.json();
-
-      if (!verifyData.success) {
-        setMessage("Turnstile verification failed. Please try again.");
-        setStatus("error");
-        return;
-      }
-
-      const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        setMessage("Configuration error. Please try again later.");
-        setStatus("error");
-        return;
-      }
-
       try {
+        const formData = new FormData(form.current!);
+        const token = formData.get("cf-turnstile-response");
+
+        if (!token) {
+          setMessage("Please complete the Turnstile challenge");
+          setStatus("error");
+          console.error("Turnstile token missing");
+          return;
+        }
+
+        // Verify Turnstile token
+        const verifyRes = await fetch("/contact/api/verify", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+
+        const verifyData = await verifyRes.json();
+
+        if (!verifyData.success) {
+          setMessage("Turnstile verification failed. Please try again.");
+          setStatus("error");
+          console.error("Turnstile verification failed:", verifyData);
+          return;
+        }
+
+        const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+        const publicKey = process.env.NEXT_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+          setMessage("Configuration error. Please try again later.");
+          setStatus("error");
+          console.error("Missing EmailJS configuration");
+          return;
+        }
+
         const res = await emailjs.sendForm(serviceId, templateId, form.current!, publicKey);
         if (res.status === 200) {
           setMessage("Message sent successfully");
           setStatus("success");
           reset();
           form.current?.reset();
+        } else {
+          throw new Error(`EmailJS response status: ${res.status}`);
         }
-      } catch {
+      } catch (error) {
         setMessage("Failed to send message. Please try again later.");
         setStatus("error");
+        console.error("Error in form submission:", error);
       }
     });
   };
