@@ -165,7 +165,7 @@ const Form = () => {
             {errors.message && <span className="text-red-500">{errors.message.message}</span>}
           </div>
 
-          <Turnstile siteKey={process.env.RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
+          <Turnstile siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} options={{ theme: "light" }} />
 
           <Button
             type="submit"
