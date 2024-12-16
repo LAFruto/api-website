@@ -58,9 +58,9 @@ const Form = () => {
         return;
       }
 
-      const serviceId = process.env.SERVICE_ID;
-      const templateId = process.env.TEMPLATE_ID;
-      const publicKey = process.env.PUBLIC_KEY;
+      const serviceId = process.env.EMAILJS_SERVICE_ID;
+      const templateId = process.env.EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.EMAILJS_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
         setMessage("Configuration error. Please try again later.");
