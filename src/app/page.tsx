@@ -4,6 +4,7 @@ import Impact from "@/components/home/Impact";
 import Partners from "@/components/home/Partners";
 import Promotional from "@/components/home/Promotional";
 import Recents from "@/components/home/Recents";
+import Upcoming from "@/components/home/Upcoming";
 import Register from "@/components/Register";
 import { getAllContent } from "@/data";
 
@@ -14,6 +15,7 @@ export default async function Home() {
     <>
       <Hero />
       <Partners />
+      {/* <Upcoming /> */}
       <Impact />
       <Promotional />
       <Recents involvements={involvements} />

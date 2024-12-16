@@ -47,11 +47,11 @@ export const PARTNERS = [
 export const STATS = [
   {
     title: "Workshops Deployed",
-    number: "8",
+    number: "7",
   },
   {
     title: "Competitions Placed",
-    number: "6",
+    number: "7",
   },
   {
     title: "Students Engaged",
@@ -413,5 +413,13 @@ export const OFFICERS = [
     lastName: "Diaz",
     position: "Secretariat Committee",
     socials: [],
+  },
+];
+
+export const UPCOMING = [
+  {
+    image: "/images/upcoming_cybersec.png",
+    date: "First Term: 2024-2025",
+    title: "UPCOMING: Cybersec Workshop",
   },
 ];
