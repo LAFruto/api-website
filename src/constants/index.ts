@@ -30,7 +30,7 @@ export const PARTNERS = [
   {
     logo: "/images/partner_gdsc.png",
     name: "Google Developers Student Clubs Mapúa MCM ",
-    link: "https://gdsc.community.dev/mapua-malayan-colleges-mindanao/?fbclid=IwAR3pbPPhu5Rnst8H-Y6qi5XBT3zONiGe5G2jjnqS8ea_br31Tesp8Y2n4VQ",
+    link: "https://www.facebook.com/gdsc.mapuamcm",
   },
   {
     logo: "/images/partner_dice.png",
