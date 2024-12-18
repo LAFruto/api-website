@@ -23,6 +23,7 @@ const Register = () => {
             height={0}
             sizes="100vw"
             className="h-full w-[500px] pl-6 hidden lg:flex"
+            priority
           />
         </div>
       </div>
