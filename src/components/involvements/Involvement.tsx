@@ -31,7 +31,7 @@ const InvolvementPost = ({ content }: { content: Content }) => {
             {content.tags &&
               content.tags.length > 0 &&
               content.tags.map((tag, index) => (
-                <span key={index} className={`text-sm border-white border hide !delay-100 py-2 px-4 rounded-xl `}>
+                <span key={index} className="text-sm border-white border hide !delay-100 py-2 px-4 rounded-lg">
                   {tag}
                 </span>
               ))}

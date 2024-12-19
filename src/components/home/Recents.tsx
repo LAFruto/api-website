@@ -35,7 +35,7 @@ const RecentItem = ({ content }: RecentItemProps) => {
             <span className="py-1 px-3 border border-black-50 rounded-xl text-xs lg:text-sm">{`${month} ${year}`}</span>
             {content.tags &&
               content.tags.map((tag, index) => (
-                <span key={index} className="py-1 px-3 border border-black-50 rounded-xl text-xs lg:text-sm">
+                <span key={index} className="py-1 px-3 border border-black-50 rounded-lg text-xs lg:text-sm">
                   {tag}
                 </span>
               ))}
